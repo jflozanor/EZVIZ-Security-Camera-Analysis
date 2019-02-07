@@ -27,7 +27,7 @@ Some things that can go wrong:
 |Corrupt micro SD card (20) | 4 | 5 | It's possible that we may corrupt an SD card while attempting to gain access to the device using the SD card |
 |Team member being unavailable/unwilling to help (32) | 8 | 4 | There may be a loss in productivity if one or more team members are unable to cooperate |
 |Cannot attack via network (15) | 3 | 5 | There may be no network-based vulnerabilities |
-|Cannot attack via micro SD card (15) | 3 | 5 | There may be no way to attack through the sd card |
+|Cannot attack via micro SD card (15) | 3 | 5 | There may be no way to attack through the SD card |
 
 # Project Methodology
 Perform research on how to best approach this project.  
