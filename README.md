@@ -2,6 +2,7 @@
 * What doing? Hacking a cheap IoT security camera  
     * Cameras nowadays are affordable and easy to set up. Full of wifi features. Popular. (Delve into convenience and sense of security)  
 * Important? Compromised device can lead to unwanted spying, learning patterns of tenants (break in when no one is home; lost sense of security).  
+     * Controlling the security camera by using remote access tools can allow the third person remotely to monitor users on their daily activities without realizing it.
 ## Goals and objectives
 * Build experience practicing skills learned in coursework
 * Pentest camera with a variety of methodologies
