@@ -20,11 +20,15 @@ Table format
 Gantt chart format
 # Project-oriented Risk List
 Some things that can go wrong:
-* Brick the camera while trying to hack it
-* Corrupt Micro SD card
-* Member(s) of team being unavailable or unhelpful
-* Cannot attack via network
-* Cannot attack via Micro SD card
+
+|Risk name (value)  | Impact     | Likelihood | Description |
+|-------------------|------------|------------|-------------|
+|Brick security camera (30) | 6 | 5 | It's possible that we may brick the security camera while trying to gain access to it via the hardware |
+|Corrupt micro SD card (20) | 4 | 5 | It's possible that we may corrupt an SD card while attempting to gain access to the device using the SD card |
+|Team member being unavailable/unwilling to help (32) | 8 | 4 | There may be a loss in productivity if one or more team members are unable to cooperate |
+|Cannot attack via network (15) | 3 | 5 | There may be no network-based vulnerabilities |
+|Cannot attack via micro SD card (15) | 3 | 5 | There may be no way to attack through the sd card |
+
 # Project Methodology
 Perform research on how to best approach this project.  
 *Ask for further detail here*
@@ -34,8 +38,11 @@ Perform research on how to best approach this project.
 Spoofing devices - pineapple from Hale? -See Echo Example
 Micro SD cards
 *hacking tools. Need to do research*
+
 |Resource  | Dr. Hale needed? | Investigating Team member | Description |
 |-------------------|---------|---------------------------|-------------|
+|EZVIZ CTQ2C| no | Everyone | this allows everyone to do independent research |
 |Some resource| yes/no | name | Some description  |
+
 # First Sprint Plan
 I'm familiar with Kanban but I don't know how to integrate it in gitHub
