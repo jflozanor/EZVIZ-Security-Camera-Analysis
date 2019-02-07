@@ -1,9 +1,9 @@
 # Executive Project Summary
+## Goals and objectives
 ## Merit of the Project
-## Goals and Objectives
 # Proposed Project Timeline
 ## Tasks and Expected Completion Time
-## Gantt Chart
+## Gant Chart
 # Project-oriented Risk List
 # Project Methodology
 # Resources/Technology needed
