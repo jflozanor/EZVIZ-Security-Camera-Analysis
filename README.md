@@ -1,17 +1,23 @@
 # Executive Project Summary
 * What doing? Hacking a cheap IoT security camera  
-    * Cameras nowadays are affordable and easy to set up. Full of wifi features. Popular. (Delve into convenience and sense of security)  
+    * Cameras nowadays are affordable and easy to set up. Full of wifi features. Popular. (Delve into convenience and sense of security)
+    * Cameras are vulnerable to different cybersecurity threats, hackers can use different techniques to access illegaly to a camera to capture images and intercept videos chatting.  
 * Important? Compromised device can lead to unwanted spying, learning patterns of tenants (break in when no one is home; lost sense of security).  
      * Controlling the security camera by using remote access tools can allow the third person remotely to monitor users on their daily activities without realizing it.
+     
 ## Goals and objectives
 * Build experience practicing skills learned in coursework
 * Pentest camera with a variety of methodologies
     * Intercept video/remotely control device
     * Test if vulnerable to spoofed network
     * Create a botnet using multiple cameras
+    Examples of useful typeys of attack for this project:
+    * Trojan horse attack, this attack uses (RAT) and provides hidden access.
+    * Clickjacking attack:
 * Deliver best practice guide, highlighting vulnerabilities to minimize threat space
 ## Merit of the Project
 * With IoT cameras gaining popularity, finding and sharing weaknesses so they can be patched is benficial to everyone  
+* It is important fot IT companies and indviusles to know that how to protect their assets during all of the current revloution in the IT industry when their cameras are connected to the interent. 
 * If no vulnerabilities are found, can add comfort to the idea of consumers trusting these devices
 # Proposed Project Timeline
 Are the 2 below the same or different? If so, how?
