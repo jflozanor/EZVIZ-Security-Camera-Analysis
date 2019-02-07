@@ -3,7 +3,7 @@
 ## Goals and Objectives
 # Proposed Project Timeline
 ## Tasks and Expected Completion Time
-## Gant Chart
+## Gantt Chart
 # Project-oriented Risk List
 # Project Methodology
 # Resources/Technology needed
