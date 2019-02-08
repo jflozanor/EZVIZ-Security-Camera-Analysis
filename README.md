@@ -4,7 +4,10 @@
     * Cameras are vulnerable to different cybersecurity threats, hackers can use different techniques to access illegaly to a camera to capture images and intercept videos chatting.  
 * Important? Compromised device can lead to unwanted spying, learning patterns of tenants (break in when no one is home; lost sense of security).  
      * Controlling the security camera by using remote access tools can allow the third person remotely to monitor users on their daily activities without realizing it.
-     
+--------------------------------
+In the modern age, Internet of Things (IoT) devices are becoming more and more common. One portion of this growing market includes security cameras. Through research and development, Wi-Fi enabled cameras have become quite affordable. They also have a growing list of features that are attractive to consumers. Some examples of the convenient tools available include: remote two-way communications, remote access to live video, integration with Alexa and IFTTT, cloud storage, sd storage, and much more.  
+  
+Our main goal is to perform a penetration test on a EZVIZ CTQ2C 720p security camera. 
 ## Goals and objectives
 * Build experience practicing skills learned in coursework
 * Pentest camera with a variety of methodologies
@@ -38,7 +41,12 @@ Gantt chart format
 Perform research on how to best approach this project.  
 *Ask for further detail here*
 ## Literature Review
+Resource  
+Authors  
+-Who cares?  
+-What does it do for me?
 ## Technical Plan
+Misuse cases (attack vector/space)
 # Resources/Technology needed
 Spoofing devices - pineapple from Hale? -See Echo Example
 Micro SD cards
