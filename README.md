@@ -26,8 +26,6 @@ Table format
 ## Gantt Chart
 Gantt chart format
 # Project-oriented Risk List
-Some things that can go wrong:
-
 |Risk name (value)  | Impact     | Likelihood | Description |
 |-------------------|------------|------------|-------------|
 |Brick security camera (30) | 6 | 5 | It's possible that we may brick the security camera while trying to gain access to it via the hardware |
