@@ -55,7 +55,10 @@ Micro SD cards
 |Resource  | Dr. Hale needed? | Investigating Team member | Description |
 |-------------------|---------|---------------------------|-------------|
 |EZVIZ CTQ2C| no | Everyone | this allows everyone to do independent research |
-|Some resource| yes/no | name | Some description  |
+| SD card | no | Everyone | Needed for the camera to be able to store recordings, does not come included with device |
+| Iphone | no | Mohammed & Khalid | Needed to investigate the iOS app |
+| Android Device | no | Jose & Thomas | Needed to investigate the android app |
+| burp suite | no | Christian | Needed to test the webapp | 
 
 # First Sprint Plan
 I'm familiar with Kanban but I don't know how to integrate it in gitHub
