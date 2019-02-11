@@ -37,6 +37,10 @@ Gantt chart format
 Perform research on how to best approach this project.  
 *Ask for further detail here*
 ## Literature Review
+|Resource  | Author(s) | Importance | Signifcance to the group |
+|-------------------|---------|---------------------------|-------------|
+| https://github.com/OWASP/owasp-mstg#android-testing-guide | OWASP | There are in-depth guides on testing mobile device applications based on the operating system  | This is useful to the group because the device we are testing has an application on both android and iOS|
+
 Resource  
 Authors  
 -Who cares?  
@@ -57,4 +61,4 @@ Micro SD cards
 | burp suite | no | Christian | Needed to test the webapp | 
 
 # First Sprint Plan
-I'm familiar with Kanban but I don't know how to integrate it in gitHub
+Kanban: located in the projects tab. 
