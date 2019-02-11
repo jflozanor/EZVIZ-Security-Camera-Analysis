@@ -3,27 +3,33 @@ In the modern age, Internet of Things (IoT) devices are becoming more and more c
   
 Our main goal is to perform a penetration test on an EZVIZ CTQ2C 720p security camera. Our scope will include testing the vulnerabilities of the camera itself, along with utilizing other devices to attack it over the network. These can be the smartphone companion app, web app, and other IoT devices. We will not be directly pen testing the official servers that host the cloud service and allow remote camera access.  
   
-A compromised security camera can lead to unwanted spying and the patterning of tenants' activities. If remote access is achieved by a malicious individual, the user could be spied on without ever knowing it. In the modern day of sacrificing security for convenience, it's important for consumers to remain aware of the dangers around them. To help people best defend themselves, we aim to present a report of our findings and an establishment of best practices for securing IoT devices.
+A compromised security camera can lead to unwanted spying and the patterning of tenants' activities. If remote access is achieved by a malicious individual, the user could be spied on without ever knowing it. In the modern day of sacrificing security for convenience, it's important for consumers to remain aware of the dangers around them. To help people best defend themselves, we aim to present a report of our findings and an establishment of best practices for securing IoT cameras.
+
 ## Goals and objectives
 * Build experience practicing skills learned in coursework
 * Pentest camera with a variety of methodologies
     * Intercept video/remotely control device
     * Test if vulnerable to spoofed network
-    * Create a botnet using multiple cameras
-    Examples of useful types of attack for this project:
+    * Create a botnet using multiple cameras  
+* Examples of useful types of attack for this project
     * Trojan horse attack, this attack uses (RAT) and provides hidden access.
     * Clickjacking attack.
 * Deliver best practice guide, highlighting vulnerabilities to minimize threat space
+
 ## Merit of the Project
 * With IoT cameras gaining popularity, finding and sharing weaknesses so they can be patched is beneficial to everyone  
 * It is important for IT companies and individuals to know that how to protect their assets during the current revolution in the IT industry when their cameras are connected to the interent. 
-* If no vulnerabilities are found, can add comfort to the idea of consumers trusting these devices
+* If no vulnerabilities are found, we can add comfort to the idea of consumers trusting these devices
+
 # Proposed Project Timeline
 Are the 2 below the same or different? If so, how?
+
 ## Tasks and Expected Completion Time
 Table format
+
 ## Gantt Chart
 Gantt chart format
+
 # Project-oriented Risk List
 |Risk name (value)  | Impact     | Likelihood | Description |
 |-------------------|------------|------------|-------------|
@@ -34,24 +40,15 @@ Gantt chart format
 |Cannot attack via micro SD card (15) | 3 | 5 | There may be no way to attack through the SD card |
 
 # Project Methodology
-Perform research on how to best approach this project.  
-*Ask for further detail here*
 ## Literature Review
 |Resource  | Author(s) | Importance | Signifcance to the group |
 |-------------------|---------|---------------------------|-------------|
 | https://github.com/OWASP/owasp-mstg#android-testing-guide | OWASP | There are in-depth guides on testing mobile device applications based on the operating system  | This is useful to the group because the device we are testing has an application on both android and iOS|
 
-Resource  
-Authors  
--Who cares?  
--What does it do for me?
 ## Technical Plan
 Misuse cases (attack vector/space)
-# Resources/Technology needed
-Spoofing devices - pineapple from Hale? -See Echo Example
-Micro SD cards
-*hacking tools. Need to do research*
 
+# Resources/Technology needed
 |Resource  | Dr. Hale needed? | Investigating Team member | Description |
 |-------------------|---------|---------------------------|-------------|
 |EZVIZ CTQ2C| no | Everyone | this allows everyone to do independent research |
