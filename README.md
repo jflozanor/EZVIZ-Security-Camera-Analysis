@@ -48,7 +48,7 @@ Gantt chart format
 ## Technical Plan
 Misuse cases (attack vector/space)
 
-One threat space that we will attempt to use to gain access to the EZVIZ security camera are the smartphone applications, this includes the android or iOS applications, that can be used to setup the device as well as watching the live feed from the camera. In order to do this we will be using the guide that OWASP has since it has instructions on how to setup a testing enviornment for each operating system as well as suggestions on how to go about testing the security of an android application. If we are able to find a vulnerability within the aplication we will try to leverage it to gain access to the security camera. 
+One threat space that we will attempt to use to gain access to the EZVIZ security camera are the smartphone applications, this includes the android or iOS applications, that can be used to setup the device as well as watching the live feed from the camera. In order to do this we will be using OWASP's penetration testing standard. This standard has instructions how to setup a testing enviornment for each operating system and suggestions how to test the security of android applications. If we are able to find a vulnerability within the aplication we will try to leverage it to gain access to the security camera. 
 
 
 # Resources/Technology needed
