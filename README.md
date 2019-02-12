@@ -48,6 +48,9 @@ Gantt chart format
 ## Technical Plan
 Misuse cases (attack vector/space)
 
+One point of entry that will be used to attempt to gain access to the EZVIZ security camera is the android or iOS application that can be used to setup the device as well as watching the live feed from the camera. In order to do this we will be using the guide that OWASP has since it has instructions on how to setup a testing enviornment for each operating system as well as suggestions on how to go about testing the security of an android application. If we are able to find a vulnerability within the aplication we will try to leverage it to gain access to the security camera. 
+
+
 # Resources/Technology needed
 |Resource  | Dr. Hale needed? | Investigating Team member | Description |
 |-------------------|---------|---------------------------|-------------|
