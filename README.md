@@ -22,6 +22,7 @@ Illegal camera surveillance has adverse effects on society, from the perspective
 * With IoT cameras gaining popularity, finding and sharing weaknesses so they can be patched is beneficial to everyone  
 * It is important for IT companies and individuals to know that how to protect their assets during the current revolution in the IT industry when their cameras are connected to the interent. 
 * If no vulnerabilities are found, we can add comfort to the idea of consumers trusting these devices
+* Through understanding the vulnerability trail, users are given the power to recover their lost data
 
 # Proposed Project Timeline
 Are the 2 below the same or different? If so, how?
