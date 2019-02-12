@@ -42,6 +42,7 @@ Gantt chart format
 |Cannot attack via network (15) | 3 | 5 | There may be no network-based vulnerabilities |
 |Cannot attack via micro SD card (15) | 3 | 5 | There may be no way to attack through the SD card |
 |Exploit unathorized servers (40) | 10 | 4 | We could possilbly obtain a cease-and-desit order and stop the porject |
+|Cannot attack via IOS/Android Apps (15) | 3 | 5 | There may be no vulnerabilities alllow us to get access to the camera via the phone apps |
 
 # Project Methodology
 ## Literature Review
