@@ -5,6 +5,8 @@ Our main goal is to perform a penetration test on an EZVIZ CTQ2C 720p security c
   
 A compromised security camera can lead to unwanted spying and the patterning of tenants' activities. If remote access is achieved by a malicious individual, the user could be spied on without ever knowing it. In the modern day of sacrificing security for convenience, it's important for consumers to remain aware of the dangers around them. To help people best defend themselves, we aim to present a report of our findings and an establishment of best practices for securing IoT cameras.
 
+Illegal camera surveillance has adverse effects on society, from the perspective that people feel their privacy is ever invaded via camera systems. Generally, the fact that people are becoming more computer literate cases of hacking cameras are rapidly being common. Industries like the hotels and surveillance units suffer greatly. An instance of the hotel sector, once their customers’ privacy is invaded through camera hackings, the hotels credibility is lost, thus they end up losing financially. 
+
 ## Goals and objectives
 * Build experience practicing skills learned in coursework
 * Pentest camera with a variety of methodologies
