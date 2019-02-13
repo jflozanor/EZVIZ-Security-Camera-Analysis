@@ -24,8 +24,6 @@ Illegal camera surveillance has adverse effects on society, from the perspective
 * If no vulnerabilities are found, we can add comfort to the idea of consumers trusting these devices
 
 # Proposed Project Timeline
-Are the 2 below the same or different? If so, how?
-
 ## Tasks and Expected Completion Time
 Table format
 
@@ -45,22 +43,62 @@ Gantt chart format
 
 # Project Methodology
 ## Literature Review
-|Resource  | Author(s) | Importance | Signifcance to the group |
-|-------------------|---------|---------------------------|-------------|
-| https://github.com/OWASP/owasp-mstg#android-testing-guide | OWASP | There are in-depth guides on testing mobile device applications based on the operating system  | This is useful to the group because the device we are testing has an application on both android and iOS|
-| https://arxiv.org/ftp/arxiv/papers/1709/1709.05742.pdf | Guri, Mordechai, Dima | Touches on how attackers use infrared waves to read signals from cameras remotely. The main mean of attacks discussed is exfiltration and infiltration.  | It’s useful to the group since the EZVIZ CTQ2C 720p security camera can be penetrated both internally and externally. |
-| http://s3.eurecom.fr/docs/trusted16_costin.pdf | Costin,Andrei | There is detailed explanation on various attacks styles like steganography on surveillance systems and how to mitigate them  | The information is beneficial to the study in the sense that it gives an insight on how to overcome some of the vulnerabilities that might arise from the stud of the EZVIZ CTQ2C 720p security camera |
-| https://bit.ly/2E6c3qW | Rajpoot, Qasim Mahmood, Christian | Covers on how the legal sector is coming in to counter attack the growing vice of breaches through camera systems.  | Material is important as it helps explain how demographic intervention promotes change on technological lawlessness. |
-| https://arxiv.org/ftp/arxiv/papers/1802/1802.03110.pdf | Wei Zhou, Yuqing Zhang, and Peng Liu | In length discussions on IoT, and especially its efficiency and possible breaches. | Since the EZVIZ CTQ2C 720p security camera is an IoT technology most of the possible vulnerability routes affecting it are mentioned. |
-| https://bit.ly/2DvLZUA | Berglez, Regina, reinhard | Explains on how to enhance security when using surveillance systems. | It has some possible schemes that can come in handy to explain how security cameras can be used without fear of being hacked. |
-|https://s3.amazonaws.com/mfs.ezvizlife.com/Video%20plugin%20for%20Windows.exe| Video Plugin for Windows | One possible way on entry | This is important because we could exploit it from our own computers|
-|https://s3.amazonaws.com/mfs.ezvizlife.com/Video%20plugin%20for%20Mac.zip| Video Plugin for Mac | One possible way on entry | This is important because we could exploit it from our own computers|
-|http://download2.ezvizlife.com/assets/deps/EzvizStudioSetups.exe|EZVIZ PC Studio | Remote Access without the need of a browser| In the case we aren't able to use a supported browser, we can use this software|
-|https://s3.amazonaws.com/mfs.ezvizlife.com/UD10510B-B_C2C_QSG_V1.0_180626.pdf| Mini O User Manual | Instructions on how to operate the security camera | We must be able to setup the device properly in order to begin testing |
-|https://s3.amazonaws.com/mfs.ezvizlife.com/C2C%20(Mini%20O)%20Datasheet.pdf | Device Data Sheet | Device Specifications | could be used to find a vulnerability in the hardware that the device uses |  
+1. **Resource:** https://github.com/OWASP/owasp-mstg#android-testing-guide  
+  a. **Author(s):** OWASP  
+  b. **Importance:** There are in-depth guides on testing mobile device applications based on the operating system  
+  c. **Significance to the Group:** This is useful to the group because the device we are testing has an application on both android and iOS  
+  
+2. **Resource:** https://arxiv.org/ftp/arxiv/papers/1709/1709.05742.pdf  
+  a. **Author(s):** Mordechai Guri, Dima Bykhovsky, Yuval Elovici  
+  b. **Importance:** Touches on how attackers use infrared waves to read signals from cameras remotely. The main mean of attacks discussed is exfiltration and infiltration.  
+  c. **Significance to the Group:** It’s useful to the group since the EZVIZ CTQ2C 720p security camera can be penetrated both internally and externally.  
+  
+3. **Resource:** http://s3.eurecom.fr/docs/trusted16_costin.pdf  
+  a. **Author(s):** Andrei Costin  
+  b. **Importance:** There is a detailed explanation of various attacks styles like steganography on surveillance systems and how to mitigate them  
+  c. **Significance to the Group:** The information is beneficial to the study in the sense that it gives an insight on how to overcome some of the vulnerabilities that might arise from the study of the EZVIZ CTQ2C 720p security camera  
+  
+4. **Resource:** https://bit.ly/2E6c3qW  
+  a. **Author(s):** Qasim Mahmood Rajpoot, Christian D. Jensen  
+  b. **Importance:** Covers how the legal sector is coming in to counter attack the growing vice of breaches through camera systems.  
+  c. **Significance to the Group:** Material is important as it helps explain how demographic intervention promotes change on technological lawlessness.  
+  
+5. **Resource:** https://arxiv.org/ftp/arxiv/papers/1802/1802.03110.pdf  
+  a. **Author(s):** Wei Zhou, Yuqing Zhang, and Peng Liu  
+  b. **Importance:** In length discussions on IoT, and especially its efficiency and possible breaches.  
+  c. **Significance to the Group:** Since the EZVIZ CTQ2C 720p security camera is an IoT technology most of the possible vulnerability routes affecting it are mentioned.  
+  
+6. **Resource:** https://bit.ly/2DvLZUA  
+  a. **Author(s):** Regina Berglez, Reinhard Kreissl  
+  b. **Importance:** Explains how to enhance security when using surveillance systems.  
+  c. **Significance to the Group:** It has some possible schemes that can come in handy to explain how security cameras can be used without fear of being hacked.  
+  
+7. **Resource:** https://s3.amazonaws.com/mfs.ezvizlife.com/Video%20plugin%20for%20Windows.exe  
+  a. **Author(s):** Video Plugin for Windows  
+  b. **Importance:** One possible entry  
+  c. **Significance to the Group:** This is important because we could exploit it from our own computers  
+  
+8. **Resource:** https://s3.amazonaws.com/mfs.ezvizlife.com/Video%20plugin%20for%20Mac.zip  
+  a. **Author(s):** Video Plugin for Mac  
+  b. **Importance:** One possible entry  
+  c. **Significance to the Group:** This is important because we could exploit it from our own computers  
+  
+9. **Resource:** http://download2.ezvizlife.com/assets/deps/EzvizStudioSetups.exe  
+  a. **Author(s):** EZVIZ PC Studio  
+  b. **Importance:** Remote Access without the need of a browser  
+  c. **Significance to the Group:** In the case we aren't able to use a supported browser, we can use this software  
+  
+10. **Resource:** https://s3.amazonaws.com/mfs.ezvizlife.com/UD10510B-B_C2C_QSG_V1.0_180626.pdf  
+  a. **Author(s):** Mini O User Manual  
+  b. **Importance:** Instructions on how to operate the security camera  
+  c. **Significance to the Group:** We must be able to setup the device properly in order to begin testing  
+  
+11. **Resource:** https://s3.amazonaws.com/mfs.ezvizlife.com/C2C%20(Mini%20O)%20Datasheet.pdf  
+  a. **Author(s):** Device Data Sheet  
+  b. **Importance:** Device Specifications  
+  c. **Significance to the Group:** Could be used to find a vulnerability in the hardware that the device uses  
 
 ## Technical Plan
-Misuse cases (attack vector/space)
 ### Threat Modeling
 
 One threat space that we will attempt to use to gain access to the EZVIZ security camera are the smartphone applications, this includes the android or iOS applications, that can be used to setup the device as well as watching the live feed from the camera. In order to do this we will be using OWASP's penetration testing standard. This standard has instructions how to setup a testing enviornment for each operating system and suggestions how to test the security of android applications.
