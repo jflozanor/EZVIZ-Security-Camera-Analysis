@@ -56,6 +56,11 @@ Gantt chart format
 | https://bit.ly/2E6c3qW | Rajpoot, Qasim Mahmood, Christian | Covers on how the legal sector is coming in to counter attack the growing vice of breaches through camera systems.  | Material is important as it helps explain how demographic intervention promotes change on technological lawlessness. |
 | https://arxiv.org/ftp/arxiv/papers/1802/1802.03110.pdf | Wei Zhou, Yuqing Zhang, and Peng Liu | In length discussions on IoT, and especially its efficiency and possible breaches. | Since the EZVIZ CTQ2C 720p security camera is an IoT technology most of the possible vulnerability routes affecting it are mentioned. |
 | https://bit.ly/2DvLZUA | Berglez, Regina, reinhard | Explains on how to enhance security when using surveillance systems. | It has some possible schemes that can come in handy to explain how security cameras can be used without fear of being hacked. |
+|https://s3.amazonaws.com/mfs.ezvizlife.com/Video%20plugin%20for%20Windows.exe| Video Plugin for Windows | One possible way on entry | This is important because we could exploit it from our own computers|
+|https://s3.amazonaws.com/mfs.ezvizlife.com/Video%20plugin%20for%20Mac.zip| Video Plugin for Mac | One possible way on entry | This is important because we could exploit it from our own computers|
+|http://download2.ezvizlife.com/assets/deps/EzvizStudioSetups.exe|EZVIZ PC Studio | Remote Access without the need of a browser| In the case we aren't able to use a supported browser, we can use this software|
+|https://s3.amazonaws.com/mfs.ezvizlife.com/UD10510B-B_C2C_QSG_V1.0_180626.pdf| Mini O User Manual | We need to know how to operate this device |
+|https://s3.amazonaws.com/mfs.ezvizlife.com/C2C%20(Mini%20O)%20Datasheet.pdf | Device Data Sheet | We need to know what it is packin inside | 
 
 ## Technical Plan
 Misuse cases (attack vector/space)
