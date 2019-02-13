@@ -54,7 +54,7 @@ Gantt chart format
 | https://bit.ly/2Gm8IX9 | Friedewald | Covers on how the society is affected by the surveillance and privacy issues. | The material is important since it helps in highlighting how the society is affected by the security breaches on the surveillance systems they install for their private use. | <-- FIX ME
 | http://orbit.dtu.dk/files/110934780/Video_Surveillance_Privacy_issues_and_legal_compliance.pdf | Rajpoot, Qasim Mahmood, Christian | Covers on how the legal sector is coming in to counter attack the growing vice of breaches through camera systems.  | Material is important as it helps explain how demographic intervention promotes change on technological lawlessness. |
 | https://arxiv.org/ftp/arxiv/papers/1802/1802.03110.pdf | Wei Zhou, Yuqing Zhang, and Peng Liu | In length discussions on IoT, and especially its efficiency and possible breaches. | Since the EZVIZ CTQ2C 720p security camera is an IoT technology most of the possible vulnerability routes affecting it are mentioned. |
-| https://bit.ly/2DvLZUA | Berglez, Regina, reinhard | Explains on how to enhance security when using surveillance systems. | It has some possible schemes that can come in handy to explain how security cameras can be used without fear of being hacked. |
+| https://www.irks.at/assets/irks/Publikationen/Forschungsbericht/SurPRISE%20D3.3%20WP3%20Exploring%20the%20Challenges%20-%20Privacy%20Security%20Acceptability%20Alternatives%202013.pdf | Berglez, Regina, reinhard | Explains on how to enhance security when using surveillance systems. | It has some possible schemes that can come in handy to explain how security cameras can be used without fear of being hacked. |
 
 ## Technical Plan
 Misuse cases (attack vector/space)
