@@ -72,7 +72,8 @@ In this study the group will attempt to access EZVIZ CTQ2C 720p security camera.
 | SD card | no | Everyone | Needed for the camera to be able to store recordings, does not come included with device |
 | Iphone | no | Mohammed & Khalid | Needed to investigate the iOS app |
 | Android Device | no | Jose & Thomas | Needed to investigate the android app |
-| burp suite | no | Christian | Needed to test the webapp |
+| Burp suite | no | Christian | Needed to test the webapp |
+| Server Space | no |Christian | Needed to test MITM attacks|
 | Wireshark software | no | Mohammed & Khalid | Software used to monitor network traffic |
 | Workstations and writing materials | no | Everyone | For recording test results during practical |
 
