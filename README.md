@@ -58,8 +58,8 @@ Gantt chart format
 |https://s3.amazonaws.com/mfs.ezvizlife.com/Video%20plugin%20for%20Windows.exe| Video Plugin for Windows | One possible way on entry | This is important because we could exploit it from our own computers|
 |https://s3.amazonaws.com/mfs.ezvizlife.com/Video%20plugin%20for%20Mac.zip| Video Plugin for Mac | One possible way on entry | This is important because we could exploit it from our own computers|
 |http://download2.ezvizlife.com/assets/deps/EzvizStudioSetups.exe|EZVIZ PC Studio | Remote Access without the need of a browser| In the case we aren't able to use a supported browser, we can use this software|
-|https://s3.amazonaws.com/mfs.ezvizlife.com/UD10510B-B_C2C_QSG_V1.0_180626.pdf| Mini O User Manual | We need to know how to operate this device |
-|https://s3.amazonaws.com/mfs.ezvizlife.com/C2C%20(Mini%20O)%20Datasheet.pdf | Device Data Sheet | We need to know what it is packin inside | 
+|https://s3.amazonaws.com/mfs.ezvizlife.com/UD10510B-B_C2C_QSG_V1.0_180626.pdf| Mini O User Manual | Instructions on how to operate the security camera | We must be able to setup the device properly in order to begin testing |
+|https://s3.amazonaws.com/mfs.ezvizlife.com/C2C%20(Mini%20O)%20Datasheet.pdf | Device Data Sheet | Device Specifications | could be used to find a vulnerability in the hardware that the device uses |  
 
 ## Technical Plan
 Misuse cases (attack vector/space)
