@@ -22,7 +22,6 @@ Illegal camera surveillance has adverse effects on society, from the perspective
 * With IoT cameras gaining popularity, finding and sharing weaknesses so they can be patched is beneficial to everyone  
 * It is important for IT companies and individuals to know that how to protect their assets during the current revolution in the IT industry when their cameras are connected to the interent. 
 * If no vulnerabilities are found, we can add comfort to the idea of consumers trusting these devices
-* Through understanding the vulnerability trail, users are given the power to recover their lost data
 
 # Proposed Project Timeline
 Are the 2 below the same or different? If so, how?
@@ -41,7 +40,7 @@ Gantt chart format
 |Team member being unavailable/unwilling to help (32) | 8 | 4 | There may be a loss in productivity if one or more team members are unable to cooperate |
 |Cannot attack via network (15) | 3 | 5 | There may be no network-based vulnerabilities |
 |Cannot attack via micro SD card (15) | 3 | 5 | There may be no way to attack through the SD card |
-|Exploit unathorized servers (40) | 10 | 4 | We could possilbly obtain a cease-and-desit order and stop the porject |
+|Exploit unathorized servers (40) | 10 | 4 | We could possilbly obtain a cease-and-desit order and stop the project |
 |Cannot attack via IOS/Android Apps (15) | 3 | 5 | There may be no vulnerabilities alllow us to get access to the camera via the phone apps |
 
 # Project Methodology
@@ -67,6 +66,20 @@ Misuse cases (attack vector/space)
 One threat space that we will attempt to use to gain access to the EZVIZ security camera are the smartphone applications, this includes the android or iOS applications, that can be used to setup the device as well as watching the live feed from the camera. In order to do this we will be using OWASP's penetration testing standard. This standard has instructions how to setup a testing enviornment for each operating system and suggestions how to test the security of android applications. If we are able to find a vulnerability within the aplication we will try to leverage it to gain access to the security camera.
 
 In this study the group will attempt to access EZVIZ CTQ2C 720p security camera. To gain access to the camera, we will attempt getting its IP address though a web application called the angry IP scanner. Follow the steps as arraigned in Wei Zhou text. If any vulnerability is found, the test results will be recorded as further investigations are conducted.
+
+###Detailed Plan on what we are going to do:
+
+One threat space that we will attempt to use to gain access to the EZVIZ security camera are the smartphone applications, this includes the android or iOS applications, that can be used to setup the device as well as watching the live feed from the camera. In order to do this we will be using OWASP penetration testing standard. This standard has instructions how to setup a testing environment for each operating system and suggestions how to test the security of android applications. 
+
+
+##Vulnerabilities and exploitation 
+
+If we discover vulnerabilities using the techniques discussed in the threat modeling stage, we will assess their impact on the security camera. We will then attempt to use these vulnerabilities to gain access to the device. 
+
+Will need to start by probing the camera, and validate that our scoped exploitation methods are viable. Individual reconnaissance may be necessary as the team has discovered variations in camera models and not all exploits may work across all devices. Probing and passive exploitation should start with local clients, in a local area network so we do not put external servers at risk. Once we have completed our probing and reconnaissance, we can proceed with the next face of the attack. //TODO
+
+we will start with we should be able to replicate our findings to multiple devices. //ADD MORE CHRISTIAN
+
 
 ### Vulnerabilities and Exploitation
 
