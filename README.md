@@ -97,6 +97,11 @@ Gantt chart format
   a. **Author(s):** Device Data Sheet  
   b. **Importance:** Device Specifications  
   c. **Significance to the Group:** Could be used to find a vulnerability in the hardware that the device uses  
+  
+12. **Resource:** https://github.com/P0cL4bs/WiFi-Pumpkin  
+  a. **Author(s):** Marcos Bomfim  
+  b. **Importance:** WiFi Pumpkin has a wide breadth of features focused on the viewing and manipulation of network communications  
+  c. **Significance to the Group:** It will be useful for performing attacks such as Rogue Access Point, Credentials Monitor, DNS Spoofing, and much more  
 
 ## Technical Plan
 ### Threat Modeling
@@ -128,6 +133,7 @@ Once we have concluded our device analysis we will be creating a report with all
 | Server Space | no |Christian | Needed to test MITM attacks|
 | Wireshark software | no | Mohammed & Khalid | Software used to monitor network traffic |
 | Workstations and writing materials | no | Everyone | For recording test results during practical |
+| WiFi Pumpkin | no | Everyone | For performing network attacks |
 
 # First Sprint Plan
 Kanban: located in the projects tab. 
