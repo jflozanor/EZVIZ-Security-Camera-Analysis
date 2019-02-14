@@ -104,9 +104,9 @@ Gantt chart format
   b. **Importance:** WiFi Pumpkin has a wide breadth of features focused on the viewing and manipulation of network communications  
   c. **Significance to the Group:** It will be useful for performing attacks such as Rogue Access Point, Credentials Monitor, DNS Spoofing, and much more  
   
-13. **Resource:** https://ipcamtalk.com/threads/custom-initrun-sh-firmware-tools-not-working.28054/
-  a. **Author(s):** Reilly Chase
-  b. **Importance:** User was able to gain root privileges using the sd card of a similar camera
+13. **Resource:** https://ipcamtalk.com/threads/custom-initrun-sh-firmware-tools-not-working.28054/  
+  a. **Author(s):** Reilly Chase  
+  b. **Importance:** User was able to gain root privileges using the sd card of a similar camera  
   c. **Significance to the Group:** If we can translate this over to our device we should be able to have a similar result
 
 ## Technical Plan
