@@ -14,8 +14,9 @@ Illegal camera surveillance has adverse effects on society, from the perspective
     * Test if vulnerable to spoofed network
     * Create a botnet using multiple cameras  
 * Examples of useful types of attack for this project
-    * Trojan horse attack, this attack uses (RAT) and provides hidden access.
-    * Clickjacking attack.
+    * Remote access attack using RAT to gain access to user's endpoint with their own credentials.
+    * DNS Spoofing.  
+    * DDoS with a camera botnet
 * Deliver best practice guide, highlighting vulnerabilities to minimize threat space
 
 ## Merit of the Project
