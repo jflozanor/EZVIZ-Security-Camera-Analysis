@@ -113,11 +113,14 @@ In this study the group will attempt to access EZVIZ CTQ2C 720p security camera.
 
 ### Vulnerabilities and exploitation 
 
-If we discover vulnerabilities using the techniques discussed in the threat modeling stage, we will assess their impact on the security camera. We will then attempt to use these vulnerabilities to gain access to the device. 
+If we discover vulnerabilities using the techniques discussed in the threat modeling stage, we will assess their impact on the security camera. We will then attempt to use these vulnerabilities to gain access to the device and take video surveillance. 
 
-We will need to start by probing the camera, and validate that our scoped exploitation methods are viable. Individual reconnaissance may be necessary as the team has discovered variations in camera models and not all exploits may work across all devices. Probing and passive exploitation should start with local clients, in a local area network so we do not put external servers at risk. Once we have completed our probing and reconnaissance, we can proceed with the next face of the attack. //TODO
+Will need to start by probing the camera, and validate that our scoped exploitation methods are viable. Individual reconnaissance may be necessary as the team has discovered variations in camera models and not all exploits may work across all devices. Device probing and passive exploitation should start in our local area networks so we do not put external servers at risk. Once we have completed our probing and reconnaissance, we can proceed with the next face of the attack. 
 
-we will start with we should be able to replicate our findings to multiple devices. //ADD MORE CHRISTIAN
+The next face of the attack will be performing the exploits. As previously stated in our goal section, the target will be submitted to Remote Access Exploits, Network spoofing attacks, DNS poisoning, Man In The Middle attacks, and other attacks applicable to this scenario. We require confidence that the exploits can be replicated on multiple cameras. Once that is accomplished, we can investigate other misuses for the camera and the data we exploited. 
+
+If we manage to reach our goal of accessing the camera controls and obtain video feeds without authorization, we could proceed to connect the cameras and create a botnet of EZVIZ IOT cameras in our controlled environment. 
+
 
 ### Reporting
 
