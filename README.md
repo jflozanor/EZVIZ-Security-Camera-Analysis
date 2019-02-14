@@ -58,7 +58,7 @@ Gantt chart format
   b. **Importance:** There is a detailed explanation of various attacks styles like steganography on surveillance systems and how to mitigate them  
   c. **Significance to the Group:** The information is beneficial to the study in the sense that it gives an insight on how to overcome some of the vulnerabilities that might arise from the study of the EZVIZ CTQ2C 720p security camera  
   
-4. **Resource:** https%3A%2F%2Fwww.irks.at%2Fassets%2Firks%2FPublikationen%2FForschungsbericht%2FSurPRISE%20D3.3%20WP3%20Exploring%20the%20Challenges%20-%20Privacy%20Security%20Acceptability%20Alternatives%202013.pdf
+4. **Resource:** https://bit.ly/2E6c3qW 
   a. **Author(s):** Qasim Mahmood Rajpoot, Christian D. Jensen  
   b. **Importance:** Covers how the legal sector is coming in to counter attack the growing vice of breaches through camera systems.  
   c. **Significance to the Group:** Material is important as it helps explain how demographic intervention promotes change on technological lawlessness.  
