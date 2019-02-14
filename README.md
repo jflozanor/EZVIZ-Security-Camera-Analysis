@@ -43,7 +43,7 @@ Illegal camera surveillance has adverse effects on society, from the perspective
 
 
 ## Gantt Chart
-Gantt chart format
+
 
 # Project-oriented Risk List
 |Risk name (value)  | Impact     | Likelihood | Description |
