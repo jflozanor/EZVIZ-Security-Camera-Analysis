@@ -22,7 +22,7 @@ Illegal camera surveillance has adverse effects on society, from the perspective
 
 ## Merit of the Project
 * With IoT cameras gaining popularity, finding and sharing weaknesses so they can be patched is beneficial to everyone  
-* It is important for IT companies and individuals to know that how to protect their assets during the current revolution in the IT industry when their cameras are connected to the interent. 
+* It is important for IT companies and individuals to know that how to protect their assets during the current revolution in the IT industry when their cameras are connected to the internet. 
 * If no vulnerabilities are found, we can add comfort to the idea of consumers trusting these devices
 
 # Proposed Project Timeline
@@ -53,8 +53,8 @@ Illegal camera surveillance has adverse effects on society, from the perspective
 |Team member being unavailable/unwilling to help (32) | 8 | 4 | There may be a loss in productivity if one or more team members are unable to cooperate |
 |Cannot attack via network (15) | 3 | 5 | There may be no network-based vulnerabilities |
 |Cannot attack via micro SD card (15) | 3 | 5 | There may be no way to attack through the SD card |
-|Exploit unathorized servers (40) | 10 | 4 | We could possilbly obtain a cease-and-desit order and stop the project |
-|Cannot attack via IOS/Android Apps (15) | 3 | 5 | There may be no vulnerabilities alllow us to get access to the camera via the phone apps |
+|Exploit unauthorized servers (40) | 10 | 4 | We could possibly obtain a cease-and-desist order and stop the project |
+|Cannot attack via IOS/Android Apps (15) | 3 | 5 | There may be no vulnerabilities allow us to get access to the camera via the phone apps |
 
 # Project Methodology
 ## Literature Review
@@ -126,7 +126,7 @@ Illegal camera surveillance has adverse effects on society, from the perspective
 ## Technical Plan
 ### Threat Modeling
 
-One threat space that we will attempt to use to gain access to the EZVIZ security camera is the smartphone applications, this includes the android and iOS applications, that can be used to setup the device as well as watching the live feed from the camera. In order to do this we will be using OWASP's penetration testing standard (from #1 in Literature Review). This standard has instructions how to setup a testing enviornment for each operating system and suggestions how to test the security of android applications.
+One threat space that we will attempt to use to gain access to the EZVIZ security camera is the smartphone applications, this includes the android and iOS applications, that can be used to setup the device as well as watching the live feed from the camera. In order to do this, we will be using OWASP's penetration testing standard (from #1 in Literature Review). This standard has instructions how to setup a testing environment for each operating system and suggestions how to test the security of android applications.
 
 In this study the group will attempt to access EZVIZ CTQ2C 720p security camera. To gain access to the camera, we will attempt getting its IP address though a web application called the angry IP scanner. Follow the steps as arraigned in #5 from the Literature Review. If any vulnerability is found, the test results will be recorded as further investigations are conducted.  
   
@@ -138,7 +138,7 @@ Since all of us have a camera at our disposal, we plan on accepting the potentia
 
 If we discover vulnerabilities using the techniques discussed in the threat modeling stage, we will assess their impact on the security camera. We will then attempt to use these vulnerabilities to gain access to the device and take video surveillance. 
 
-Will need to start by probing the camera, and validate that our scoped exploitation methods are viable. Individual reconnaissance may be necessary as the team has discovered variations in camera models and not all exploits may work across all devices. Device probing and passive exploitation should start in our local area networks so we do not put external servers at risk. Once we have completed our probing and reconnaissance, we can proceed with the next face of the attack. 
+Will need to start by probing the camera and validate that our scoped exploitation methods are viable. Individual reconnaissance may be necessary as the team has discovered variations in camera models and not all exploits may work across all devices. Device probing and passive exploitation should start in our local area networks, so we do not put external servers at risk. Once we have completed our probing and reconnaissance, we can proceed with the next face of the attack. 
 
 The next face of the attack will be performing the exploits. As previously stated in our goal section, the target will be submitted to Remote Access Exploits, Network spoofing attacks, DNS poisoning, Man In The Middle attacks, and other attacks applicable to this scenario. To perform these attacks, we will utilize the WiFi Pumpkin on a Linux VM on a LAN. Then we could use a tool like Wireshark to capture traffic from the camera. We require confidence that the exploits can be replicated on multiple cameras. Once that is accomplished, we can investigate other misuses for the camera and the data we exploited. 
   
@@ -146,14 +146,14 @@ After successfully obtaining Root on the device using the microSD card slot firm
 
 ### Reporting
 
-Once we have concluded our device analysis we will be creating a report with all our findings. The report will include the vulnerabilities discovered, if any, and their associated risk score. The report will also include possible remediations for the vulnerabilities discovered. Finally, we will also create a best practices guide based on our research in order to help secure these devices. 
+Once we have concluded our device analysis, we will be creating a report with all our findings. The report will include the vulnerabilities discovered, if any, and their associated risk score. The report will also include possible remediations for the vulnerabilities discovered. Finally, we will also create a best practices guide based on our research in order to help secure these devices. 
 
 # Resources/Technology needed
 |Resource  | Dr. Hale needed? | Investigating Team member | Description |
 |----------|------------------|---------------------------|-------------|
 |EZVIZ CTQ2C| no | Everyone | this allows everyone to do independent research |
 | SD card | no | Everyone | Needed for the camera to be able to store recordings, does not come included with device |
-| Iphone | no | Mohammed & Khalid | Needed to investigate the iOS app |
+| iPhone | no | Mohammed & Khalid | Needed to investigate the iOS app |
 | Android Device | no | Jose & Thomas | Needed to investigate the android app |
 | Burp suite | no | Christian | Needed to test the webapp |
 | Server Space | no |Christian | Needed to test MITM attacks|
