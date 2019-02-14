@@ -42,9 +42,6 @@ Illegal camera surveillance has adverse effects on society, from the perspective
 | Produce Final Presentation | 4/18 | 5/03 | 2 weeks |
 
 
-
-*Note: should include entries for Milstone 2 & 3 requirements
-
 ## Gantt Chart
 Gantt chart format
 
