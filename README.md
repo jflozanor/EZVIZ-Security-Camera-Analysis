@@ -14,8 +14,9 @@ Illegal camera surveillance has adverse effects on society, from the perspective
     * Test if vulnerable to spoofed network
     * Create a botnet using multiple cameras  
 * Examples of useful types of attack for this project
-    * Remote access attack using RAT to gain access to user's endpoint with their own credentials.
-    * DNS Spoofing.  
+    * Remote access attack using RAT to gain access to user's endpoint with their own credentials  
+    * DNS Spoofing  
+    * Custom firmware
     * DDoS with a camera botnet
 * Deliver best practice guide, highlighting vulnerabilities to minimize threat space
 
@@ -26,7 +27,17 @@ Illegal camera surveillance has adverse effects on society, from the perspective
 
 # Proposed Project Timeline
 ## Tasks and Expected Completion Time
-Table format
+| Task | Start Date | End Date | Time Needed |
+|------|------------|----------|-------------|
+| Investigate camera hardware | 0/0 | 0/0 | X days/weeks |
+| Build test beds (iOS, Android, WebApp) | 0/0 | 0/0 | X days/weeks |
+| Setup WiFi Pumpkin | 0/0 | 0/0 | X days/weeks |
+| Network attacks | 0/0 | 0/0 | X days/weeks |
+| Test EZVIZ app for vulnerabilities | 0/0 | 0/0 | X days/weeks |
+| Prepare microSD for firmware attack | 0/0 | 0/0 | X days/weeks |
+| Implement firmware attack | 0/0 | 0/0 | X days/weeks |  
+
+*Note: should include entries for Milstone 2 & 3 requirements
 
 ## Gantt Chart
 Gantt chart format
@@ -114,7 +125,11 @@ Gantt chart format
 
 One threat space that we will attempt to use to gain access to the EZVIZ security camera is the smartphone applications, this includes the android and iOS applications, that can be used to setup the device as well as watching the live feed from the camera. In order to do this we will be using OWASP's penetration testing standard (from #1 in Literature Review). This standard has instructions how to setup a testing enviornment for each operating system and suggestions how to test the security of android applications.
 
-In this study the group will attempt to access EZVIZ CTQ2C 720p security camera. To gain access to the camera, we will attempt getting its IP address though a web application called the angry IP scanner. Follow the steps as arraigned in #5 from the Literature Review. If any vulnerability is found, the test results will be recorded as further investigations are conducted.
+In this study the group will attempt to access EZVIZ CTQ2C 720p security camera. To gain access to the camera, we will attempt getting its IP address though a web application called the angry IP scanner. Follow the steps as arraigned in #5 from the Literature Review. If any vulnerability is found, the test results will be recorded as further investigations are conducted.  
+  
+To test what kind of power over the camera we can gain via the microSD slot, we intend on following a process similar to that of Mr. Chase in resource #13. He performed the attack on a Hikvision camera. Hikvision is the parent company of EZVIZ and is prone to having security issues (based on our initial Google searches).
+
+Since all of us have a camera at our disposal, we plan on accepting the potential loss of one. To appease our curiosity, we will take one apart and see what can be learned about how its hardware functions. May prove to be helpful in compromising the device's security.
 
 ### Vulnerabilities and exploitation 
 
@@ -122,10 +137,9 @@ If we discover vulnerabilities using the techniques discussed in the threat mode
 
 Will need to start by probing the camera, and validate that our scoped exploitation methods are viable. Individual reconnaissance may be necessary as the team has discovered variations in camera models and not all exploits may work across all devices. Device probing and passive exploitation should start in our local area networks so we do not put external servers at risk. Once we have completed our probing and reconnaissance, we can proceed with the next face of the attack. 
 
-The next face of the attack will be performing the exploits. As previously stated in our goal section, the target will be submitted to Remote Access Exploits, Network spoofing attacks, DNS poisoning, Man In The Middle attacks, and other attacks applicable to this scenario. To perform these attacks, we will utilize the WiFi Pumpkin on a Linux VM on a LAN. We require confidence that the exploits can be replicated on multiple cameras. Once that is accomplished, we can investigate other misuses for the camera and the data we exploited. 
-
-If we manage to reach our goal of accessing the camera controls and obtain video feeds without authorization, we could proceed to connect the cameras and create a botnet of EZVIZ IOT cameras in our controlled environment. 
-
+The next face of the attack will be performing the exploits. As previously stated in our goal section, the target will be submitted to Remote Access Exploits, Network spoofing attacks, DNS poisoning, Man In The Middle attacks, and other attacks applicable to this scenario. To perform these attacks, we will utilize the WiFi Pumpkin on a Linux VM on a LAN. Then we could use a tool like Wireshark to capture traffic from the camera. We require confidence that the exploits can be replicated on multiple cameras. Once that is accomplished, we can investigate other misuses for the camera and the data we exploited. 
+  
+After successfully obtaining Root on the device using the microSD card slot firmware attack, we will push the limits of what we can do with the new privileges. This could be key creating the botnet. If we manage to reach our goal of accessing the camera controls and obtain video feeds without authorization, we could proceed to connect the cameras and create a botnet of EZVIZ IOT cameras in our controlled environment. 
 
 ### Reporting
 
@@ -133,7 +147,7 @@ Once we have concluded our device analysis we will be creating a report with all
 
 # Resources/Technology needed
 |Resource  | Dr. Hale needed? | Investigating Team member | Description |
-|-------------------|---------|---------------------------|-------------|
+|----------|------------------|---------------------------|-------------|
 |EZVIZ CTQ2C| no | Everyone | this allows everyone to do independent research |
 | SD card | no | Everyone | Needed for the camera to be able to store recordings, does not come included with device |
 | Iphone | no | Mohammed & Khalid | Needed to investigate the iOS app |
