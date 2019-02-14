@@ -29,13 +29,19 @@ Illegal camera surveillance has adverse effects on society, from the perspective
 ## Tasks and Expected Completion Time
 | Task | Start Date | End Date | Time Needed |
 |------|------------|----------|-------------|
-| Investigate camera hardware | 0/0 | 0/0 | X days/weeks |
-| Build test beds (iOS, Android, WebApp) | 0/0 | 0/0 | X days/weeks |
-| Setup WiFi Pumpkin | 0/0 | 0/0 | X days/weeks |
-| Network attacks | 0/0 | 0/0 | X days/weeks |
-| Test EZVIZ app for vulnerabilities | 0/0 | 0/0 | X days/weeks |
-| Prepare microSD for firmware attack | 0/0 | 0/0 | X days/weeks |
-| Implement firmware attack | 0/0 | 0/0 | X days/weeks |  
+| Investigate Camera Hardware | 2/28 | 3/07 | 1 week |
+| Build Test Beds (iOS, Android, WebApp) | 2/28 | 3/03 | 4 days |
+| Test (iOS, Android, WebApp) | 3/03 | 3/17 | 2 weeks |
+| Setup WiFi Pumpkin | 2/28 | 3/03 | 4 days |
+| Network attacks | 3/03 | 3/17 |  2 weeks |
+| Prepare MicroSD for Firmware Attack | 3/03 | 3/10 | 1 weeks |
+| Implement Firmware Attack | 3/10 | 3/17 | 1 weeks |
+| Formalize Write up for M2 | 3/17 | 3/28 | 9 days |
+| Project Realization | 4/04 | 4/11 | 1 week |
+| Review Project Documentation | 4/11 | 4/18 | 1 week |
+| Produce Final Presentation | 4/18 | 5/03 | 2 weeks |
+
+
 
 *Note: should include entries for Milstone 2 & 3 requirements
 
