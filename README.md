@@ -124,9 +124,9 @@ Illegal camera surveillance has adverse effects on society, from the perspective
   c. **Significance to the Group:** If we can translate this over to our device we should be able to have a similar result
 
 14. **Resource:** https://null-byte.wonderhowto.com/how-to/intercept-images-from-security-camera-using-wireshark-0191735/
-a. **Author(s):** Kody
-b. **Importance:** A tutorial on how to capture images from a security camera via Wireshark.
-c. **Signigicance to the Group:** The article will guide us to intercept images from a security samera using Wireshark
+  a. **Author(s):** Kody
+  b. **Importance:** A tutorial on how to capture images from a security camera via Wireshark.
+  c. **Signigicance to the Group:** The article will guide us to intercept images from a security samera using Wireshark
 
 ## Technical Plan
 ### Threat Modeling
