@@ -123,6 +123,7 @@ Illegal camera surveillance has adverse effects on society, from the perspective
   b. **Importance:** User was able to gain root privileges using the sd card of a similar camera  
   c. **Significance to the Group:** If we can translate this over to our device we should be able to have a similar result
 
+14.
 ## Technical Plan
 ### Threat Modeling
 
