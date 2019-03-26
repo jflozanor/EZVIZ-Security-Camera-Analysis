@@ -1,16 +1,16 @@
-# Progress Report (insert date here)
+# Progress Report (3 / 25 / 2019)
 ## Overview
-(insert brief overview of efforts made)
+passive sniffing of camera traffic on an isolated network. Christian and I disocvered intersting messages when we used the EZVIZ android mobile app to discover local EZVIZ devices. We were able to see what looked like SSDP packets since the camera replied with a lot of information including serial number. We didn't think much of it at first but I went back to try and recreate those messages and found out that hikvision, EZVIZ parent company, has a history of using SSDP insecurely. _jgherndz_ 
 
 ## Outcomes
-(brief overview of outcomes - what did you achieve?)
+Through the discovery of those ssdp packets I was able to find out that hikvision software works with with the ezviz products giving us more access to the camera. Through the hikvision software we were able to retrieve the cameras configuration using the default username and password. Christian was then able to find my Wifi SSID as well as Wifi password. _jgherndz_ _cescobar_
 
 also list them out like this:
-* outcome 1
-* outcome 2
+* Discovered the ability to use hikvision software
+* Retrieved Wifi SSID and Wifi password from config file
 
 ## Hinderances
-(insert brief discussion of challenges encountered)
+Not digging more into the SDDP packets right away led to not making the discovery that hikvision software can be used on the ezviz cameras.
 
 ## Ongoing Risks
 (address your project risks identified from Milestone 1 and update them based on your current progress, this should be a table)
