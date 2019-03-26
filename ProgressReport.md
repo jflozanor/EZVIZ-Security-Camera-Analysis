@@ -5,7 +5,6 @@ passive sniffing of camera traffic on an isolated network. Christian and I disoc
 ## Outcomes
 Through the discovery of those ssdp packets I was able to find out that hikvision software works with with the ezviz products giving us more access to the camera. Through the hikvision software we were able to retrieve the cameras configuration using the default username and password. Christian was then able to find my Wifi SSID as well as Wifi password. _jgherndz_ _cescobar_
 
-also list them out like this:
 * Discovered the ability to use hikvision software
 * Retrieved Wifi SSID and Wifi password from config file
 
