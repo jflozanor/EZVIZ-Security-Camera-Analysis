@@ -11,8 +11,7 @@
 **MITM Android App:** I rooted an old android phone that I no longer use in order to install a portswigger certificate as an android system certificate. I did this because the EZVIZ application wouldn't let traffic through if the certificate was installed as a user certificate. The app did block some traffic but not all of it when the certificate was under a system certificate so we were able to see some traffic go through. _jgherndz_ _ccescobar_
   
   
-**Serial Communications:**
-Once we took apart the camera, I noticed a label “UART”, which can be used to communicate with the OS via serial communication. Jose and I found measured the currents with a volt meter and figured out which pin can be used to obtain serial. <add picture of the serial port in the camera> 
+**Serial Communications:** Once we took apart the camera, I noticed a label “UART”, which can be used to communicate with the OS via serial communication. Jose and I found measured the currents with a volt meter and figured out which pin can be used to obtain serial. <add picture of the serial port in the camera> 
 The first step was to create a cable that would allow us to get serial communication with the device. I decided to solder the cables to prevent miscommunication or other errors. 
 
 Connecting the cables to a USB serial adapter was the easy part. What we needed was to figure out the baud rate, bits and parity the camera would use to communicate. Countless hours were spent testing the most common and even some obscure baud rates, but I only got invalid data. <insert picture of the invalid data.> I decided to reach out to Dr. Mahoney, cyber sec prof at UNO, and ask for some help to get information about the device’s communications. 
@@ -51,7 +50,7 @@ Connecting the cables to a USB serial adapter was the easy part. What we needed 
 ## Outcomes
 **Passive Sniffing of Camera Traffic on an Isolated Network:** Through the discovery of those ssdp packets I was able to find out that hikvision software works with with the ezviz products giving us more access to the camera. Through the hikvision software we were able to retrieve the cameras configuration using the default username and password. Christian was then able to find my Wifi SSID as well as Wifi password. _jgherndz_ _ccescobar_
 * Discovered the ability to use hikvision software
-* Retrieved Wifi SSID and Wifi password from config file
+* Retrieved Wifi SSID and Wifi password from [config file](config-info.png)
   
 **Android App Pentest (Emulator):** _twlayne_
 * I learned that the EZVIZ app is thoroughly secured to not run on virtual devices
@@ -79,16 +78,21 @@ X-Requested-With: com.ezviz
 
 {"remark":"Test","email":"gmailEmail@gmail.com","phone":"gmailEmail@gmail.com","account":"","shareDeviceInfos":[{"shareCameras":[{"channelNo":1,"permission":127}],"permission":3,"subSerial":"155000000"}]}
 ```
-* Discovered possible missuse cases with the api
+* Discovered possible missuse cases with the api  
+  
+**Serial Communication:**  I was able to get a stream of data but decided to reach out to Dr. Mahoney, cyber sec prof at UNO, and ask for some guidance in order to get more information about the device’s communications.
 
 ## Hinderances
 **Passive Sniffing of Camera Traffic on an Isolated Network:** Not digging more into the SDDP packets right away led to not making the discovery that hikvision software can be used on the ezviz cameras.
 
-**MITM Android App:** learning adb commands as well learning the process of rooting an android phone. Finding useful information since most of the traffic seemed to be blocked due to using burp to be a man in the middle.
-  
 **Android App Pentest (Emulator):** On most emulations, it cannot be downloaded onto the devices through the Google Play Store (see [Android Studio_Fail](PlayStoreFail.JPG)). Sometimes I could download it but then it would crash repeatedly. I even tried using APK files from https://www.apkmonk.com/app/com.ezviz/#previous; the install would always fail at the last second. _twlayne_
   
 **Android App Pentest (ADB):** Two of the ADB commands I ran failed to produce any positive results. [dumpheap](ADB/dumpheap_fail.JPG) failed due to an anti-debugging security exception. [force-network-logs](ADB/forceNetworkLogs_fail.JPG) failed due to my inability to get the command working. _twlayne_
 
+**MITM Android App:** learning adb commands as well learning the process of rooting an android phone. Finding useful information since most of the traffic seemed to be blocked due to using burp to be a man in the middle.
+
+**Serial Communication:** What we needed was to figure out the baud rate, bits and parity the camera would use to communicate. Countless hours were spent testing the most common and even some obscure baud rates, but I only got invalid data. <insert picture of the invalid data.> 
+  
+  
 ## Ongoing Risks
 (address your project risks identified from Milestone 1 and update them based on your current progress, this should be a table)
