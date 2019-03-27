@@ -4,12 +4,10 @@
   
 **Android App Pentest (Emulator):** Using VMWare Workstation I attempted to get a variety of Android emulators up and running with the EZVIZ application. The goal was to be able to pentest the app and maybe even manipulate the system to attack the camera or gather data. Some of the emulators attempted include: Cm-x86_64-14.1-r2.iso, Cm-x86-14.1-r2.iso, and android-x86_64-8.1-r1.iso. When those failed to function correctly, I moved on to Android Studio. Here I made two virtual devices (one running Android 8.1 and one with Android 9.0). _twlayne_
   
-**Android App Pentest (ADB):** 
+**Android App Pentest (ADB):** I used the Android Debug Bridge (ADB) tool from Android Studio to see what information I could gather from the app while I had it running on my phone. I aimed to generate a variety of log files using commands found on https://developer.android.com/studio/command-line/adb. I used dumpheap, dumpstate, dumpsys, force-network-logs, and logcat. I also looked into performing a tcpdump, but to do so requires a rooted phone. Jose agreed he would look into it for Milestone 3. _twlayne_
   
 **WiFi Pumpkin:**
   
-**Micro SD Card Attack:**
-
 **MITM Android App:** I rooted an old android phone that I no longer use in order to install a portswigger certificate as an android system certificate. I did this because the EZVIZ application wouldn't let traffic through if the certificate was installed as a user certificate. The app did block some traffic but not all of it when the certificate was under a system certificate so we were able to see some traffic go through. _jgherndz_ _ccescobar_
   
 ## Outcomes
@@ -20,9 +18,10 @@
 **Android App Pentest (Emulator):** _twlayne_
 * I learned that the EZVIZ app is thoroughly secured to not run on virtual devices
   
-**Android App Pentest (ADB):** 
-* Outcome1
-* Outcome2
+**Android App Pentest (ADB):** I was able to successfully generate some dump/log files with data relating to EZVIZ activity. However, none of it seemed very critical. Note1: the *_ezviz files are the parts of the original files that reference "ezviz". Note2: the dumpsys file was too large to upload. _twlayne_
+* dumpstate: [dumpstate](dumpstate.txt) | [dumpstate_ezviz](dumpstate_ezviz.txt)
+* dumpsys: [dumpsys_ezviz](dumpsys_ezviz.txt)
+* logcat: [logcat](logcat.txt) | [logcat_ezviz](logcat_ezviz.txt)
 
 **MITM Android App:** We were able to find an api that the application uses when the user shares their camera with another EZVIZ user.
 ```
@@ -50,6 +49,8 @@ X-Requested-With: com.ezviz
 **MITM Android App:** learning adb commands as well learning the process of rooting an android phone. Finding useful information since most of the traffic seemed to be blocked due to using burp to be a man in the middle.
   
 **Android App Pentest (Emulator):** On most emulations, it cannot be downloaded onto the devices through the Google Play Store (see [Android Studio_Fail](PlayStoreFail.JPG)). Sometimes I could download it but then it would crash repeatedly. I even tried using APK files from https://www.apkmonk.com/app/com.ezviz/#previous; the install would always fail at the last second. _twlayne_
+  
+**Android App Pentest (ADB):** Two of the ADB commands I ran failed to produce any positive results. [dumpheap](dumpheap_fail.JPG) failed due to an anti-debugging security exception. [force-network-logs](forceNetworkLogs_fail.JPG) failed due to my inability to get the command working. _twlayne_
 
 ## Ongoing Risks
 (address your project risks identified from Milestone 1 and update them based on your current progress, this should be a table)
