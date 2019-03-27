@@ -19,9 +19,9 @@
 * I learned that the EZVIZ app is thoroughly secured to not run on virtual devices
   
 **Android App Pentest (ADB):** I was able to successfully generate some dump/log files with data relating to EZVIZ activity. However, none of it seemed very critical. Note1: the *_ezviz files are the parts of the original files that reference "ezviz". Note2: the dumpsys file was too large to upload. _twlayne_
-* dumpstate: [dumpstate](dumpstate.txt) | [dumpstate_ezviz](dumpstate_ezviz.txt)
-* dumpsys: [dumpsys_ezviz](dumpsys_ezviz.txt)
-* logcat: [logcat](logcat.txt) | [logcat_ezviz](logcat_ezviz.txt)
+* dumpstate: [dumpstate](ADB/dumpstate.txt) | [dumpstate_ezviz](ADB/dumpstate_ezviz.txt)
+* dumpsys: [dumpsys_ezviz](ADB/dumpsys_ezviz.txt)
+* logcat: [logcat](ADB/logcat.txt) | [logcat_ezviz](ADB/logcat_ezviz.txt)
 
 **MITM Android App:** We were able to find an api that the application uses when the user shares their camera with another EZVIZ user.
 ```
@@ -50,7 +50,7 @@ X-Requested-With: com.ezviz
   
 **Android App Pentest (Emulator):** On most emulations, it cannot be downloaded onto the devices through the Google Play Store (see [Android Studio_Fail](PlayStoreFail.JPG)). Sometimes I could download it but then it would crash repeatedly. I even tried using APK files from https://www.apkmonk.com/app/com.ezviz/#previous; the install would always fail at the last second. _twlayne_
   
-**Android App Pentest (ADB):** Two of the ADB commands I ran failed to produce any positive results. [dumpheap](dumpheap_fail.JPG) failed due to an anti-debugging security exception. [force-network-logs](forceNetworkLogs_fail.JPG) failed due to my inability to get the command working. _twlayne_
+**Android App Pentest (ADB):** Two of the ADB commands I ran failed to produce any positive results. [dumpheap](ADB/dumpheap_fail.JPG) failed due to an anti-debugging security exception. [force-network-logs](ADB/forceNetworkLogs_fail.JPG) failed due to my inability to get the command working. _twlayne_
 
 ## Ongoing Risks
 (address your project risks identified from Milestone 1 and update them based on your current progress, this should be a table)
