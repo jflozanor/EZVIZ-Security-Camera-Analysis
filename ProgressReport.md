@@ -32,6 +32,22 @@ Connecting the cables to a USB serial adapter was the easy part. What we needed 
    *Misuse:*
     We could modify or flash the contents of the chip with mallicious code to allows to open a back door and obtain direct access to the device. This failed due to the time constrains and limited understanding of ARM architecture. 
   
+  **Open ports in the device:**
+  There are several open pots on my device 8000,9010,8200,544. Nmap provided a guess of the possible services running in that port, so I decided to conduct reserach to see if said service would be vulnerable or had other backdoors. And _"oh boy! let me tell you!!"_  _**to be continued in the next few points...**_
+  
+  *Case:*
+  Open ports with possible backdoors or vulnerable services open to the internet. 
+  
+  *Misuse:*
+  If there was indeed a backdoor, we could obtain information that we are not authorized to have, or obtain some level of proviledge to sniff traffic.  
+  
+  **Weak Default Configurations:**
+  *Case:*
+  Default configurations aid the user and the application to connect to the camera once for setup. If not properly configured or sanitized, default configurations can be guessed allowing bad actors to have access to the device's configuration. 
+  
+   *misuse:*
+   _Oh boy, Where do I start. _ WE HACKED IT. 
+  
 ## Outcomes
 **Passive Sniffing of Camera Traffic on an Isolated Network:** Through the discovery of those ssdp packets I was able to find out that hikvision software works with with the ezviz products giving us more access to the camera. Through the hikvision software we were able to retrieve the cameras configuration using the default username and password. Christian was then able to find my Wifi SSID as well as Wifi password. _jgherndz_ _ccescobar_
 * Discovered the ability to use hikvision software
