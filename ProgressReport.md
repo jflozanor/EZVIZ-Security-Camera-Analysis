@@ -40,7 +40,7 @@ Accept-Language: en-US
 Cookie: clientType=3; clientVersion=3.8.2.0106; userId=; lang=en; C_SS=ac4bf3df727f414e8f021a58dc4f7e20
 X-Requested-With: com.ezviz
 
-{"remark":"Test","email":"gmailEmail@gmail.com","phone":"gmailEmail@gmail.com","account":"","shareDeviceInfos":[{"shareCameras":[{"channelNo":1,"permission":127}],"permission":3,"subSerial":"155002344"}]}
+{"remark":"Test","email":"gmailEmail@gmail.com","phone":"gmailEmail@gmail.com","account":"","shareDeviceInfos":[{"shareCameras":[{"channelNo":1,"permission":127}],"permission":3,"subSerial":"155000000"}]}
 ```
 * Discovered possible missuse cases with the api
 
