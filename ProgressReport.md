@@ -10,6 +10,28 @@
   
 **MITM Android App:** I rooted an old android phone that I no longer use in order to install a portswigger certificate as an android system certificate. I did this because the EZVIZ application wouldn't let traffic through if the certificate was installed as a user certificate. The app did block some traffic but not all of it when the certificate was under a system certificate so we were able to see some traffic go through. _jgherndz_ _ccescobar_
   
+  
+**Serial Communications:**
+Once we took apart the camera, I noticed a label “UART”, which can be used to communicate with the OS via serial communication. Jose and I found measured the currents with a volt meter and figured out which pin can be used to obtain serial. <add picture of the serial port in the camera> 
+The first step was to create a cable that would allow us to get serial communication with the device. I decided to solder the cables to prevent miscommunication or other errors. 
+
+Connecting the cables to a USB serial adapter was the easy part. What we needed was to figure out the baud rate, bits and parity the camera would use to communicate. Countless hours were spent testing the most common and even some obscure baud rates, but I only got invalid data. <insert picture of the invalid data.> I decided to reach out to Dr. Mahoney, cyber sec prof at UNO, and ask for some help to get information about the device’s communications. 
+  
+   *Case:*
+  The communication port would not require authentication or would use default settings. 
+  
+   *Misuse:*
+  Unfortunatly, there was not a reliable point of entry, thus I was unable to find a possible misuse case.
+  
+  **Direct Chip Programming:**
+  Attempted to read the content of the chip(W25Q64JV), using a chip programming board(CH341a Black Edition) and free to use software (CH341a Programmer). This method would allow us to read, write and wipe the memory/BIOS of the camera. 
+  
+   *Case:*
+  Avility to read and modify the contents of the chip. Flash new software directly to the board. 
+   
+   *Misuse:*
+    We could modify or flash the contents of the chip with mallicious code to allows to open a back door and obtain direct access to the device. This failed due to the time constrains and limited understanding of ARM architecture. 
+  
 ## Outcomes
 **Passive Sniffing of Camera Traffic on an Isolated Network:** Through the discovery of those ssdp packets I was able to find out that hikvision software works with with the ezviz products giving us more access to the camera. Through the hikvision software we were able to retrieve the cameras configuration using the default username and password. Christian was then able to find my Wifi SSID as well as Wifi password. _jgherndz_ _ccescobar_
 * Discovered the ability to use hikvision software
