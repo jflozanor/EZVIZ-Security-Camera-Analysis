@@ -135,12 +135,19 @@ No permission was given to us to verify manually that the web app is vulnerable 
 **Web App Pentest (OWASP ZAP):**
 Limitation of testing the web app, we could only scan the web app by an automated security scanner, but we could not perform manual testing to verify the findings in the web app since we do not have a permission. _kalsalehi_ _msalharthi_
 
+**iOS App Pentest:**
+* After we changed certain settings in the Jailbreak (unc0ver), the iPhone kept rebooting.
+* We could not install Xcode, a development environment for macOS, on PCs because it is violated Apple policy. _kalsalehi_ _msalharthi_
+
   
 ## Ongoing Risks
 (address your project risks identified from Milestone 1 and update them based on your current progress, this should be a table)
 
 **Web App Pentest (Password Policy):**
-Isolated environment cannot be helpful here since the web app needs active internet. When we tried to proxy our PCs to make isolated environment, we could not get any traffic to capture and analysis. _Kalsalehi_ _msalharthi_
+Isolated environment cannot be helpful here since the web app needs active internet. When we tried to proxy our PCs to make isolated environment, we could not get any traffic to capture and analysis. _kalsalehi_ _msalharthi_
+
+**iOS App Pentest:**
+We should have a MacBook to install Xcode as a development environment. _kalsalehi_ _msalharthi_
 
 
 
