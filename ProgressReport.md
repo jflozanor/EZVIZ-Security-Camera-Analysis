@@ -129,10 +129,12 @@ No permission was given to us to verify manually that the web app is vulnerable 
 
   
 ## Ongoing Risks
-(address your project risks identified from Milestone 1 and update them based on your current progress, this should be a table)
+|Risk name (value)  | Impact     | Likelihood | Description | Still Relevant |Occured|
+|-------------------|------------|------------|-------------|----------------|-------|
+|Brick security camera (30) | 6 | 5 | It's possible that we may brick the security camera while trying to gain access to it via the hardware | Yes| Camera appears to be bricked due to attempting to load a new config file using hikvision software|
+|Corrupt micro SD card (20) | 4 | 5 | It's possible that we may corrupt an SD card while attempting to gain access to the device using the SD card | No | N/a |
+|Team member being unavailable/unwilling to help (32) | 8 | 4 | There may be a loss in productivity if one or more team members are unable to cooperate | Yes | N/a |
+|Cannot attack via network (15) | 3 | 5 | There may be no network-based vulnerabilities | Yes | Still haven't given up we seem to have found at least one way in |
+|Cannot attack via micro SD card (15) | 3 | 5 | There may be no way to attack through the SD card | No | Documentation that we had found is no longer available|
+|Cannot attack via IOS/Android Apps (15) | 3 | 5 | There may be no vulnerabilities allow us to get access to the camera via the phone apps | Yes | Iphone app wasn't successful, there are still a couple more things to try on the android side|
 
-**Web App Pentest (Password Policy):**
-Isolated environment cannot be helpful here since the web app needs active internet. When we tried to proxy our PCs to make isolated environment, we could not get any traffic to capture and analysis.
-
-**iOS App Pentest:**
-We should have a MacBook to install Xcode as a development environment.
