@@ -10,54 +10,49 @@
   
 **MITM Android App:** I rooted an old android phone that I no longer use in order to install a portswigger certificate as an android system certificate. I did this because the EZVIZ application wouldn't let traffic through if the certificate was installed as a user certificate. The app did block some traffic but not all of it when the certificate was under a system certificate so we were able to see some traffic go through. _jgherndz_ _ccescobar_
   
-  
 **Serial Communications:** Once we took apart the camera, I noticed a label “UART”, which can be used to communicate with the OS via serial communication. Jose and I found measured the currents with a volt meter and figured out which pin can be used to obtain serial. <add picture of the serial port in the camera> 
 The first step was to create a cable that would allow us to get serial communication with the device. I decided to solder the cables to prevent miscommunication or other errors. 
 
 Connecting the cables to a USB serial adapter was the easy part. What we needed was to figure out the baud rate, bits and parity the camera would use to communicate. Countless hours were spent testing the most common and even some obscure baud rates, but I only got invalid data. <insert picture of the invalid data.> I decided to reach out to Dr. Mahoney, cyber sec prof at UNO, and ask for some help to get information about the device’s communications. 
   
-   *Case:*
-  The communication port would not require authentication or would use default settings. 
+*Case:*
+The communication port would not require authentication or would use default settings. 
   
-   *Misuse:*
-  Unfortunatly, there was not a reliable point of entry, thus I was unable to find a possible misuse case.
+*Misuse:*
+Unfortunatly, there was not a reliable point of entry, thus I was unable to find a possible misuse case.
   
-  **Direct Chip Programming:**
-  Attempted to read the content of the chip(W25Q64JV), using a chip programming board(CH341a Black Edition) and free to use software (CH341a Programmer). This method would allow us to read, write and wipe the memory/BIOS of the camera. 
+**Direct Chip Programming:**
+Attempted to read the content of the chip(W25Q64JV), using a chip programming board(CH341a Black Edition) and free to use software (CH341a Programmer). This method would allow us to read, write and wipe the memory/BIOS of the camera. 
   
-   *Case:*
-  Avility to read and modify the contents of the chip. Flash new software directly to the board. 
+*Case:*
+Avility to read and modify the contents of the chip. Flash new software directly to the board. 
    
-   *Misuse:*
-    We could modify or flash the contents of the chip with mallicious code to allows to open a back door and obtain direct access to the device. This failed due to the time constrains and limited understanding of ARM architecture. 
+*Misuse:*
+We could modify or flash the contents of the chip with mallicious code to allows to open a back door and obtain direct access to the device. This failed due to the time constrains and limited understanding of ARM architecture. 
   
-  **Open ports in the device:**
-  There are several open pots on my device 8000,9010,8200,544. [Nmap](Network/nmap_scan.PNG) provided a guess of the possible services running in that port, so I decided to conduct reserach to see if said service would be vulnerable or had other backdoors. And _"oh boy! let me tell you!!"_  _**to be continued in the next few points...**_
+**Open ports in the device:**
+There are several open pots on my device 8000,9010,8200,544. [Nmap](Network/nmap_scan.PNG) provided a guess of the possible services running in that port, so I decided to conduct reserach to see if said service would be vulnerable or had other backdoors. And _"oh boy! let me tell you!!"_  _**to be continued in the next few points...**_
   
-  *Case:*
-  Open ports with possible backdoors or vulnerable services open to the internet. 
+*Case:*
+Open ports with possible backdoors or vulnerable services open to the internet. 
   
-  *Misuse:*
-  If there was indeed a backdoor, we could obtain information that we are not authorized to have, or obtain some level of proviledge to sniff traffic.  
+*Misuse:*
+ If there was indeed a backdoor, we could obtain information that we are not authorized to have, or obtain some level of proviledge to sniff traffic.  
   
-  **Weak Default Configurations:**
-  *Case:*
-  Default configurations aid the user and the application to connect to the camera once for setup. If not properly configured or sanitized, default configurations can be guessed allowing bad actors to have access to the device's configuration. 
+**Weak Default Configurations:**
+*Case:*
+Default configurations aid the user and the application to connect to the camera once for setup. If not properly configured or sanitized, default configurations can be guessed allowing bad actors to have access to the device's configuration. 
   
-   *misuse:*
-   _Oh boy, Where do I start. _ WE HACKED IT. 
+*Misuse:*
+_Oh boy, Where do I start. _ WE HACKED IT. 
    
-   **Web App Pentest (Password Policy):**
-   Mohammed and I created an account on the camera web app because it allows us to manage the camera remotely. We set up the account’s password (abc123) to measure the minimum required password on the web app. Moreover, we created other account with username (userabc123) and the password (abc123) is derivative of the username to test the level of the password complexity requirement. After we created the two accounts, we tried to log in on the web app several times with wrong password to see how many attempts are allowed to enter the passwords. Furthermore, once we clicked on forget password, we could reset the password using the same old password (abc123).  _Kalsalehi_ _msalharthi_
-   
-   **Web App Pentest (OWASP ZAP):**
-   ZAP is an open-source security scanner that is provided in Kali Linux by default. We used the tool to scan the web app that is connected to the camera, and it provided us vulnerabilities assessment report including vulnerabilities founded names, their risk rate and their locations on the web app. The ZAP report also recommended solutions for the founded vulnerabilities. _kalsalehi_ _msalharthi_
-   
- **iOS App Pentest:** 
+**Web App Pentest (Password Policy):**
+Mohammed and I created an account on the camera web app because it allows us to manage the camera remotely. We set up the account’s password (abc123) to measure the minimum required password on the web app. Moreover, we created other account with username (userabc123) and the password (abc123) is derivative of the username to test the level of the password complexity requirement. After we created the two accounts, we tried to log in on the web app several times with wrong password to see how many attempts are allowed to enter the passwords. Furthermore, once we clicked on forget password, we could reset the password using the same old password (abc123).  _Kalsalehi_ _msalharthi_
+  
+**iOS App Pentest:** 
 Khalid and I were responsible to penetrate the EZVIZ camera through iOS application. We used an actual iPhone which was iPhone SE and it has 11.4.1 iOS version. We found a jailbreak called unc0ver that is suitable for our iOS version. We could download the jailbreak on the iPhone. Moreover, we tried to install Xcode, a development environment for macOS, on our PCs. _Kalsalehi_ _Msalharthi_
   
-   
-  
+
 ## Outcomes
 **Passive Sniffing of Camera Traffic on an Isolated Network:** Through the discovery of those ssdp packets I was able to find out that hikvision software works with with the ezviz products giving us more access to the camera. Through the hikvision software we were able to retrieve the cameras configuration using the default username and password. Christian was then able to find my Wifi SSID as well as Wifi password.  
 * Discovered the ability to use hikvision software
@@ -106,15 +101,11 @@ The web app has implemented a weak password policy that allows users to create:
 * No account lockout or CAPTCHA implemented on ‘login’ page.
 * Password history is not maintained. 
 * No two-factor authentication(2FA) options are provided.
-An attacker can launch a brute force attack to crack users’ login credentials due to the weakness of the password requirements and there is no account lockout, CAPTCHA or 2FA implemented on ‘Login’ page. _Kalsalehi_ _msalharthi_
-
-**Web App Pentest (OWASP ZAP):**
-We observed that the X-Frame-Options HTTP response header was not implemented in the web app due to that the web app cannot protect the web app’s users against Clickjacking attack when this vulnerability gets exploited by rendering a page in a frame. 
-This vulnerability presents a medium risk to the web app since an attacker can trick a web app user to perform different actions allowed in the web app without his/her consent. This attack may enforce users to download malware, visit harmful pages or share sensitive information including user’s credentials. _kalsalehi_ _msalharthi_
-
+An attacker can launch a brute force attack to crack users’ login credentials due to the weakness of the password requirements and there is no account lockout, CAPTCHA or 2FA implemented on ‘Login’ page.
+  
 **iOS App Pentest:** 
-when we tried to install the jailbreak, the iPhone automatically restarted without completing to install the jailbreak. We looked up how to solve this issue, and we could find that we must enable and disable some certain settings from the jailbreak to install it successfully, but we could not get rid of the issue. After discussing with Dr. Hale, we decided to stop penetrating on iOS application due to our limitation and started to work with our teammates on the other aspects of the project. _Kalsalehi_ _Msalharthi_
-
+when we tried to install the jailbreak, the iPhone automatically restarted without completing to install the jailbreak. We looked up how to solve this issue, and we could find that we must enable and disable some certain settings from the jailbreak to install it successfully, but we could not get rid of the issue. After discussing with Dr. Hale, we decided to stop penetrating on iOS application due to our limitation and started to work with our teammates on the other aspects of the project.
+  
 
 ## Hinderances
 **Passive Sniffing of Camera Traffic on an Isolated Network:** Not digging more into the SDDP packets right away led to not making the discovery that hikvision software can be used on the ezviz cameras.
@@ -130,21 +121,18 @@ when we tried to install the jailbreak, the iPhone automatically restarted witho
 **Serial Communication:** What we needed was to figure out the baud rate, bits and parity the camera would use to communicate. Countless hours were spent testing the most common and even some obscure baud rates, but I only got invalid data. <insert picture of the invalid data.> 
   
 **Web App Pentest (Password Policy):**
-No permission was given to us to verify manually that the web app is vulnerable to Brute Force attack. _Kalsalehi_ _msalharthi_
-
-**Web App Pentest (OWASP ZAP):**
-Limitation of testing the web app, we could only scan the web app by an automated security scanner, but we could not perform manual testing to verify the findings in the web app since we do not have a permission. _kalsalehi_ _msalharthi_
-
+No permission was given to us to verify manually that the web app is vulnerable to Brute Force attack.
+  
 **iOS App Pentest:**
 * After we changed certain settings in the Jailbreak (unc0ver), the iPhone kept rebooting.
-* We could not install Xcode, a development environment for macOS, on PCs because it is violated Apple policy. _kalsalehi_ _msalharthi_
+* We could not install Xcode, a development environment for macOS, on PCs because it is violated Apple policy.
 
   
 ## Ongoing Risks
 (address your project risks identified from Milestone 1 and update them based on your current progress, this should be a table)
 
 **Web App Pentest (Password Policy):**
-Isolated environment cannot be helpful here since the web app needs active internet. When we tried to proxy our PCs to make isolated environment, we could not get any traffic to capture and analysis. _kalsalehi_ _msalharthi_
+Isolated environment cannot be helpful here since the web app needs active internet. When we tried to proxy our PCs to make isolated environment, we could not get any traffic to capture and analysis.
 
 **iOS App Pentest:**
-We should have a MacBook to install Xcode as a development environment. _kalsalehi_ _msalharthi_
+We should have a MacBook to install Xcode as a development environment.
