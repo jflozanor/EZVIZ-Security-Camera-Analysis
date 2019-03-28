@@ -32,7 +32,7 @@ Connecting the cables to a USB serial adapter was the easy part. What we needed 
     We could modify or flash the contents of the chip with mallicious code to allows to open a back door and obtain direct access to the device. This failed due to the time constrains and limited understanding of ARM architecture. 
   
   **Open ports in the device:**
-  There are several open pots on my device 8000,9010,8200,544. [Nmap](nmap_scan.PNG) provided a guess of the possible services running in that port, so I decided to conduct reserach to see if said service would be vulnerable or had other backdoors. And _"oh boy! let me tell you!!"_  _**to be continued in the next few points...**_
+  There are several open pots on my device 8000,9010,8200,544. [Nmap](Network/nmap_scan.PNG) provided a guess of the possible services running in that port, so I decided to conduct reserach to see if said service would be vulnerable or had other backdoors. And _"oh boy! let me tell you!!"_  _**to be continued in the next few points...**_
   
   *Case:*
   Open ports with possible backdoors or vulnerable services open to the internet. 
