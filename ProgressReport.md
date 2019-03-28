@@ -46,6 +46,10 @@ Connecting the cables to a USB serial adapter was the easy part. What we needed 
   
    *misuse:*
    _Oh boy, Where do I start. _ WE HACKED IT. 
+   
+   **Web App Pentest (Password Policy):**
+   Mohammed and I created an account on the camera web app because it allows us to manage the camera remotely. We set up the account’s password (abc123) to measure the minimum required password on the web app. Moreover, we created other account with username (userabc123) and the password (abc123) is derivative of the username to test the level of the password complexity requirement. After we created the two accounts, we tried to log in on the web app several times with wrong password to see how many attempts are allowed to enter the passwords. Furthermore, once we clicked on forget password, we could reset the password using the same old password (abc123).  _Kalsalehi_ _msalharthi_
+   
   
 ## Outcomes
 **Passive Sniffing of Camera Traffic on an Isolated Network:** Through the discovery of those ssdp packets I was able to find out that hikvision software works with with the ezviz products giving us more access to the camera. Through the hikvision software we were able to retrieve the cameras configuration using the default username and password. Christian was then able to find my Wifi SSID as well as Wifi password.  
@@ -87,6 +91,17 @@ X-Requested-With: com.ezviz
   
 **Serial Communication:**  I was able to get a stream of data but decided to reach out to Dr. Mahoney, cyber sec prof at UNO, and ask for some guidance in order to get more information about the device’s communications.
 
+**Web App Pentest (Password Policy):**
+The web app has implemented a weak password policy that allows users to create:
+* Easily guessable passwords that are not contained specific characters requirements; for example: mix of capital/small letters, symbols and numbers. 
+* Passwords that are either same as usernames or a derivative of usernames.
+Also, we found that the web app has:
+* No account lockout or CAPTCHA implemented on ‘login’ page.
+* Password history is not maintained. 
+* No two-factor authentication(2FA) options are provided.
+An attacker can launch a brute force attack to crack users’ login credentials due to the weakness of the password requirements and there is no account lockout, CAPTCHA or 2FA implemented on ‘Login’ page. _Kalsalehi_ _msalharthi_
+
+
 ## Hinderances
 **Passive Sniffing of Camera Traffic on an Isolated Network:** Not digging more into the SDDP packets right away led to not making the discovery that hikvision software can be used on the ezviz cameras.
 
@@ -100,6 +115,21 @@ X-Requested-With: com.ezviz
 
 **Serial Communication:** What we needed was to figure out the baud rate, bits and parity the camera would use to communicate. Countless hours were spent testing the most common and even some obscure baud rates, but I only got invalid data. <insert picture of the invalid data.> 
   
+**Web App Pentest (Password Policy):**
+No permission was given to us to verify manually that the web app is vulnerable to Brute Force attack. _Kalsalehi_ _msalharthi_
+
+  
   
 ## Ongoing Risks
 (address your project risks identified from Milestone 1 and update them based on your current progress, this should be a table)
+
+**Web App Pentest (Password Policy):**
+Isolated environment cannot be helpful here since the web app needs active internet. When we tried to proxy our PCs to make isolated environment, we could not get any traffic to capture and analysis. _Kalsalehi_ _msalharthi_
+
+
+
+## Recommendation 
+**Web App Pentest (Password Policy):**
+The web app should not allow repeated false attempts to login. The account should be locked after a maximum of 3-5 wrong login attempts. Also, it may restrict such attacks by implementing a CAPTCHA to ensure that no automated attack can be run. 
+Moreover, the web app should enforce a strict password policy forcing web app users to set passwords with a minimum length and with a minimum number of numeric, alpha numeric or special characters. _Kalsalehi_ _msalharthi_
+
