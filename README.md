@@ -54,7 +54,12 @@ Illegal camera surveillance has adverse effects on society, from the perspective
 |Cannot attack via network (15) | 3 | 5 | There may be no network-based vulnerabilities |
 |Cannot attack via micro SD card (15) | 3 | 5 | There may be no way to attack through the SD card |
 |Cannot attack via IOS/Android Apps (15) | 3 | 5 | There may be no vulnerabilities allow us to get access to the camera via the phone apps |
-
+  
+# Diagrams
+[Use Case: Camera](Diagrams/Use_Case_Camera.PNG)  
+[Use Case: API](Diagrams/Use_Case_Api.PNG)  
+[Process: Emulator](Diagrams/Process_Emulator.JPG)
+  
 # Project Methodology
 ## Literature Review
 1. **Resource:** https://github.com/OWASP/owasp-mstg#android-testing-guide  
