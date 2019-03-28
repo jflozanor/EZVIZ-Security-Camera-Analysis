@@ -50,6 +50,9 @@ Connecting the cables to a USB serial adapter was the easy part. What we needed 
    **Web App Pentest (Password Policy):**
    Mohammed and I created an account on the camera web app because it allows us to manage the camera remotely. We set up the account’s password (abc123) to measure the minimum required password on the web app. Moreover, we created other account with username (userabc123) and the password (abc123) is derivative of the username to test the level of the password complexity requirement. After we created the two accounts, we tried to log in on the web app several times with wrong password to see how many attempts are allowed to enter the passwords. Furthermore, once we clicked on forget password, we could reset the password using the same old password (abc123).  _Kalsalehi_ _msalharthi_
    
+   **Web App Pentest (OWASP ZAP):**
+   ZAP is an open-source security scanner that is provided in Kali Linux by default. We used the tool to scan the web app that is connected to the camera, and it provided us vulnerabilities assessment report including vulnerabilities founded names, their risk rate and their locations on the web app. The ZAP report also recommended solutions for the founded vulnerabilities. _kalsalehi_ _msalharthi_
+   
   
 ## Outcomes
 **Passive Sniffing of Camera Traffic on an Isolated Network:** Through the discovery of those ssdp packets I was able to find out that hikvision software works with with the ezviz products giving us more access to the camera. Through the hikvision software we were able to retrieve the cameras configuration using the default username and password. Christian was then able to find my Wifi SSID as well as Wifi password.  
@@ -95,11 +98,15 @@ X-Requested-With: com.ezviz
 The web app has implemented a weak password policy that allows users to create:
 * Easily guessable passwords that are not contained specific characters requirements; for example: mix of capital/small letters, symbols and numbers. 
 * Passwords that are either same as usernames or a derivative of usernames.
-Also, we found that the web app has:
+ Also, we found that the web app has:
 * No account lockout or CAPTCHA implemented on ‘login’ page.
 * Password history is not maintained. 
 * No two-factor authentication(2FA) options are provided.
 An attacker can launch a brute force attack to crack users’ login credentials due to the weakness of the password requirements and there is no account lockout, CAPTCHA or 2FA implemented on ‘Login’ page. _Kalsalehi_ _msalharthi_
+
+**Web App Pentest (OWASP ZAP):**
+We observed that the X-Frame-Options HTTP response header was not implemented in the web app due to that the web app cannot protect the web app’s users against Clickjacking attack when this vulnerability gets exploited by rendering a page in a frame. 
+This vulnerability presents a medium risk to the web app since an attacker can trick a web app user to perform different actions allowed in the web app without his/her consent. This attack may enforce users to download malware, visit harmful pages or share sensitive information including user’s credentials. _kalsalehi_ _msalharthi_
 
 
 ## Hinderances
@@ -118,7 +125,9 @@ An attacker can launch a brute force attack to crack users’ login credentials 
 **Web App Pentest (Password Policy):**
 No permission was given to us to verify manually that the web app is vulnerable to Brute Force attack. _Kalsalehi_ _msalharthi_
 
-  
+**Web App Pentest (OWASP ZAP):**
+Limitation of testing the web app, we could only scan the web app by an automated security scanner, but we could not perform manual testing to verify the findings in the web app since we do not have a permission. _kalsalehi_ _msalharthi_
+
   
 ## Ongoing Risks
 (address your project risks identified from Milestone 1 and update them based on your current progress, this should be a table)
@@ -132,4 +141,11 @@ Isolated environment cannot be helpful here since the web app needs active inter
 **Web App Pentest (Password Policy):**
 The web app should not allow repeated false attempts to login. The account should be locked after a maximum of 3-5 wrong login attempts. Also, it may restrict such attacks by implementing a CAPTCHA to ensure that no automated attack can be run. 
 Moreover, the web app should enforce a strict password policy forcing web app users to set passwords with a minimum length and with a minimum number of numeric, alpha numeric or special characters. _Kalsalehi_ _msalharthi_
+
+**Web App Pentest (OWASP ZAP):**
+Possible values for the X-Frame-Options header are: 
+• DENY, which prevents any domain from framing the content.
+• SAMEORIGIN, which only allows the current site to frame the content. _kalsalehi_ _msalharthi_
+
+
 
