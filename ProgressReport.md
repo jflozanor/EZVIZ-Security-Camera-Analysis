@@ -51,8 +51,8 @@ Connecting the cables to a USB serial adapter was the easy part. What we needed 
 **Passive Sniffing of Camera Traffic on an Isolated Network:** Through the discovery of those ssdp packets I was able to find out that hikvision software works with with the ezviz products giving us more access to the camera. Through the hikvision software we were able to retrieve the cameras configuration using the default username and password. Christian was then able to find my Wifi SSID as well as Wifi password.  
 * Discovered the ability to use hikvision software
 * Retrieved Wifi SSID and Wifi password from [config file](Network/config-info.png)
-* [pcap]("Network/Camera_alone.pcap") of camera alone
-* [pcap]("Network/phone_searching_lan.pcapng") of phone searching for cameras on lan
+* [pcap](Network/Camera_alone.pcap) of camera alone
+* [pcap](Network/phone_searching_lan.pcapng) of phone searching for cameras on lan
   
 **Android App Pentest (Emulator):** 
 * I learned that the EZVIZ app is thoroughly secured to not run on virtual devices
