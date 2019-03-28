@@ -137,4 +137,8 @@ No permission was given to us to verify manually that the web app is vulnerable 
 |Cannot attack via network (15) | 3 | 5 | There may be no network-based vulnerabilities | Yes | Still haven't given up we seem to have found at least one way in |
 |Cannot attack via micro SD card (15) | 3 | 5 | There may be no way to attack through the SD card | No | Documentation that we had found is no longer available|
 |Cannot attack via IOS/Android Apps (15) | 3 | 5 | There may be no vulnerabilities allow us to get access to the camera via the phone apps | Yes | Iphone app wasn't successful, there are still a couple more things to try on the android side|
-
+  
+# Diagrams
+[Use Case: Camera](Diagrams/Use_Case_Camera.PNG)  
+[Use Case: API](Diagrams/Use_Case_Api.PNG)  
+[Process: Emulator](Diagrams/Process_Emulator.JPG)
