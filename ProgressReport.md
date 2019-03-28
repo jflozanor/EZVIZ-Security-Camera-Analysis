@@ -6,7 +6,7 @@
   
 **Android App Pentest (ADB):** I used the Android Debug Bridge (ADB) tool from Android Studio to see what information I could gather from the app while I had it running on my phone. I aimed to generate a variety of log files using commands found on https://developer.android.com/studio/command-line/adb. I used dumpheap, dumpstate, dumpsys, force-network-logs, and logcat. I also looked into performing a tcpdump, but to do so requires a rooted phone. Jose agreed he would look into it for Milestone 3. _twlayne_
   
-**WiFi Pumpkin:**
+**WiFi Pumpkin:** Jose got the WiFi Pumpkin up and running on his laptop with a wireless adapter card. We then worked together to connect my phone and camera to the rogue access point. All we were able to pull was POST requests, but we may give the tool another shot to see if we can figure out how to get more data with it. _twlayne_ _jgherndz_
   
 **MITM Android App:** I rooted an old android phone that I no longer use in order to install a portswigger certificate as an android system certificate. I did this because the EZVIZ application wouldn't let traffic through if the certificate was installed as a user certificate. The app did block some traffic but not all of it when the certificate was under a system certificate so we were able to see some traffic go through. _jgherndz_ _ccescobar_
   
@@ -48,19 +48,22 @@ Connecting the cables to a USB serial adapter was the easy part. What we needed 
    _Oh boy, Where do I start. _ WE HACKED IT. 
   
 ## Outcomes
-**Passive Sniffing of Camera Traffic on an Isolated Network:** Through the discovery of those ssdp packets I was able to find out that hikvision software works with with the ezviz products giving us more access to the camera. Through the hikvision software we were able to retrieve the cameras configuration using the default username and password. Christian was then able to find my Wifi SSID as well as Wifi password. _jgherndz_ _ccescobar_
+**Passive Sniffing of Camera Traffic on an Isolated Network:** Through the discovery of those ssdp packets I was able to find out that hikvision software works with with the ezviz products giving us more access to the camera. Through the hikvision software we were able to retrieve the cameras configuration using the default username and password. Christian was then able to find my Wifi SSID as well as Wifi password.  
 * Discovered the ability to use hikvision software
 * Retrieved Wifi SSID and Wifi password from [config file](Network/config-info.png)
 * [pcap]("Network/Camera_alone.pcap") of camera alone
 * [pcap]("Network/phone_searching_lan.pcapng") of phone searching for cameras on lan
   
-**Android App Pentest (Emulator):** _twlayne_
+**Android App Pentest (Emulator):** 
 * I learned that the EZVIZ app is thoroughly secured to not run on virtual devices
   
-**Android App Pentest (ADB):** I was able to successfully generate some dump/log files with data relating to EZVIZ activity. However, none of it seemed very critical. Note1: the *_ezviz files are the parts of the original files that reference "ezviz". Note2: the dumpsys file was too large to upload. _twlayne_
+**Android App Pentest (ADB):** I was able to successfully generate some dump/log files with data relating to EZVIZ activity. However, none of it seemed very critical. Note1: the *_ezviz files are the parts of the original files that reference "ezviz". Note2: the dumpsys file was too large to upload.
 * dumpstate: [dumpstate](ADB/dumpstate.txt) | [dumpstate_ezviz](ADB/dumpstate_ezviz.txt)
 * dumpsys: [dumpsys_ezviz](ADB/dumpsys_ezviz.txt)
 * logcat: [logcat](ADB/logcat.txt) | [logcat_ezviz](ADB/logcat_ezviz.txt)
+  
+**WiFi Pumpkin:** After using the WiFi Pumpkin, the best we could get from it were POST requests for each transaction sent from my phone/camera
+* POST requests
 
 **MITM Android App:** We were able to find an api that the application uses when the user shares their camera with another EZVIZ user.
 ```
@@ -87,9 +90,11 @@ X-Requested-With: com.ezviz
 ## Hinderances
 **Passive Sniffing of Camera Traffic on an Isolated Network:** Not digging more into the SDDP packets right away led to not making the discovery that hikvision software can be used on the ezviz cameras.
 
-**Android App Pentest (Emulator):** On most emulations, it cannot be downloaded onto the devices through the Google Play Store (see [Android Studio_Fail](PlayStoreFail.JPG)). Sometimes I could download it but then it would crash repeatedly. I even tried using APK files from https://www.apkmonk.com/app/com.ezviz/#previous; the install would always fail at the last second. _twlayne_
+**Android App Pentest (Emulator):** On most emulations, it cannot be downloaded onto the devices through the Google Play Store (see [Android Studio_Fail](PlayStoreFail.JPG)). Sometimes I could download it but then it would crash repeatedly. I even tried using APK files from https://www.apkmonk.com/app/com.ezviz/#previous; the install would always fail at the last second. 
   
-**Android App Pentest (ADB):** Two of the ADB commands I ran failed to produce any positive results. [dumpheap](ADB/dumpheap_fail.JPG) failed due to an anti-debugging security exception. [force-network-logs](ADB/forceNetworkLogs_fail.JPG) failed due to my inability to get the command working. _twlayne_
+**Android App Pentest (ADB):** Two of the ADB commands I ran failed to produce any positive results. [dumpheap](ADB/dumpheap_fail.JPG) failed due to an anti-debugging security exception. [force-network-logs](ADB/forceNetworkLogs_fail.JPG) failed due to my inability to get the command working. 
+  
+**WiFi Pumpkin:** The tool was unexpectedly not user friendly. Our troubles in getting more data could be linked to either user error, a bad tool, or the camera/phone are secured in a way to not allow the viewing of more in-depth network data. If we have the time, we can pursue the tool again.
 
 **MITM Android App:** learning adb commands as well learning the process of rooting an android phone. Finding useful information since most of the traffic seemed to be blocked due to using burp to be a man in the middle.
 
