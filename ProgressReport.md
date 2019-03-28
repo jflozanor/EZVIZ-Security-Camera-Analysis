@@ -148,18 +148,3 @@ Isolated environment cannot be helpful here since the web app needs active inter
 
 **iOS App Pentest:**
 We should have a MacBook to install Xcode as a development environment. _kalsalehi_ _msalharthi_
-
-
-
-## Recommendation 
-**Web App Pentest (Password Policy):**
-The web app should not allow repeated false attempts to login. The account should be locked after a maximum of 3-5 wrong login attempts. Also, it may restrict such attacks by implementing a CAPTCHA to ensure that no automated attack can be run. 
-Moreover, the web app should enforce a strict password policy forcing web app users to set passwords with a minimum length and with a minimum number of numeric, alpha numeric or special characters. _Kalsalehi_ _msalharthi_
-
-**Web App Pentest (OWASP ZAP):**
-Possible values for the X-Frame-Options header are: 
-• DENY, which prevents any domain from framing the content.
-• SAMEORIGIN, which only allows the current site to frame the content. _kalsalehi_ _msalharthi_
-
-
-
