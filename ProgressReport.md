@@ -53,6 +53,10 @@ Connecting the cables to a USB serial adapter was the easy part. What we needed 
    **Web App Pentest (OWASP ZAP):**
    ZAP is an open-source security scanner that is provided in Kali Linux by default. We used the tool to scan the web app that is connected to the camera, and it provided us vulnerabilities assessment report including vulnerabilities founded names, their risk rate and their locations on the web app. The ZAP report also recommended solutions for the founded vulnerabilities. _kalsalehi_ _msalharthi_
    
+ **iOS App Pentest:** 
+Khalid and I were responsible to penetrate the EZVIZ camera through iOS application. We used an actual iPhone which was iPhone SE and it has 11.4.1 iOS version. We found a jailbreak called unc0ver that is suitable for our iOS version. We could download the jailbreak on the iPhone. Moreover, we tried to install Xcode, a development environment for macOS, on our PCs. _Kalsalehi_ _Msalharthi_
+  
+   
   
 ## Outcomes
 **Passive Sniffing of Camera Traffic on an Isolated Network:** Through the discovery of those ssdp packets I was able to find out that hikvision software works with with the ezviz products giving us more access to the camera. Through the hikvision software we were able to retrieve the cameras configuration using the default username and password. Christian was then able to find my Wifi SSID as well as Wifi password.  
@@ -97,7 +101,7 @@ X-Requested-With: com.ezviz
 **Web App Pentest (Password Policy):**
 The web app has implemented a weak password policy that allows users to create:
 * Easily guessable passwords that are not contained specific characters requirements; for example: mix of capital/small letters, symbols and numbers. 
-* Passwords that are either same as usernames or a derivative of usernames.
+* Passwords that are either same as usernames or a derivative of usernames.  
  Also, we found that the web app has:
 * No account lockout or CAPTCHA implemented on ‘login’ page.
 * Password history is not maintained. 
@@ -107,6 +111,9 @@ An attacker can launch a brute force attack to crack users’ login credentials 
 **Web App Pentest (OWASP ZAP):**
 We observed that the X-Frame-Options HTTP response header was not implemented in the web app due to that the web app cannot protect the web app’s users against Clickjacking attack when this vulnerability gets exploited by rendering a page in a frame. 
 This vulnerability presents a medium risk to the web app since an attacker can trick a web app user to perform different actions allowed in the web app without his/her consent. This attack may enforce users to download malware, visit harmful pages or share sensitive information including user’s credentials. _kalsalehi_ _msalharthi_
+
+**iOS App Pentest:** 
+when we tried to install the jailbreak, the iPhone automatically restarted without completing to install the jailbreak. We looked up how to solve this issue, and we could find that we must enable and disable some certain settings from the jailbreak to install it successfully, but we could not get rid of the issue. After discussing with Dr. Hale, we decided to stop penetrating on iOS application due to our limitation and started to work with our teammates on the other aspects of the project. _Kalsalehi_ _Msalharthi_
 
 
 ## Hinderances
