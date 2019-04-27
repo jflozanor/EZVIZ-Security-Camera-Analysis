@@ -5,14 +5,14 @@ I thought it would be a good idea to run armitage and see what kind of exploits 
 
 
 **Attempt at changing the Camera default password**
-
+A question was asked during the last milestone on whether you can change the default password used to connect to the camera over port 554. I did some testing with the phone application and changed the default password and even removed it to see if it would affect the connection over port 554. _jgherndz_
 
 **Connecting to Camera via Port 8000**
 
 
 
 **Using TCP Connection to connect to Camera via Port 8000**
-
+Since we were unable to get much out of trying to send GET requests to the camera through port 8000 we thought the connection might be TCP. I used python in order to try to connect to the camera but was unable to get any response from the camera. _jghernndz_
 
 
 ## Outcomes
@@ -20,28 +20,21 @@ I thought it would be a good idea to run armitage and see what kind of exploits 
 Armitage was able to recommend a few attacks after it completed its initial scan and found the camera. There were 3 categories that armitage found unfortunately none of the exploits worked. _jgherndz_
 
 **Attempt at changing the Camera default password**
-
+After changing and removing the password I found that none of these change the default password used for port 554. The password change is only for the video encryption used for the application. If the video is shared with another user using the phone app then that user would use the password that was changed during testing. _jgherndz_
 
 **Connecting to Camera via Port 8000**
 
 
 
 **Using TCP Connection to connect to Camera via Port 8000**
-
+I was unable to get any type of information. _jgherndz_
 
 ## Hinderances
 **Vulnerability Scan using Armitage**
 The hinderance would be that the attacks that Armitage found were not succcesful. _jgherndz_
   
 **Attempt at changing the Camera default password**
-
+There were no hinderances, I was still able to connect using VLC player using the default username and password. _jgherndz_
 
 **Connecting to Camera via Port 8000**
-
-
-
-**Using TCP Connection to connect to Camera via Port 8000**
-
-
-
-**Using TCP Connection to connect to Camera via Port 8000**
+A lack of knowledge on how to write a TCP connection in python could have limited my results. _jgherndez_
