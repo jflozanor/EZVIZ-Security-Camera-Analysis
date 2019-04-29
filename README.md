@@ -11,14 +11,11 @@ Illegal camera surveillance has adverse effects on society, from the perspective
 * Build experience practicing skills learned in coursework
 * Pentest camera with a variety of methodologies
     * Intercept video/remotely control device
-    * Test if vulnerable to spoofed network
-    * Create a botnet using multiple cameras  
-* Examples of useful types of attack for this project
-    * Remote access attack using RAT to gain access to user's endpoint with their own credentials  
-    * DNS Spoofing  
-    * Custom firmware
-    * DDoS with a camera botnet
-* Deliver best practice guide, highlighting vulnerabilities to minimize threat space
+    * Test the security of its mobile applications
+    * Analyze packets passively and see what can be observed
+    * Attempt to leverage the HTTP requests it transmitts
+    * Use parent companies software to achieve more access to the camera
+    * Attempt to connect to the camera through a TCP connection
 
 ## Merit of the Project
 * With IoT cameras gaining popularity, finding and sharing weaknesses so they can be patched is beneficial to everyone  
@@ -170,5 +167,9 @@ Once we have concluded our device analysis, we will be creating a report with al
 | Workstations and writing materials | no | Everyone | For recording test results during practical |
 | WiFi Pumpkin | no | Everyone | For performing network attacks |
 
-# First Sprint Plan
-Kanban: located in the projects tab. 
+## Results / Findings
+(brief overview of outcomes - what did you achieve?, list milestone 1/2/3 outcomes, make an effort to logically collect and organize the findings)
+
+(bulleted lists can also be helpful to structure your results discussion)
+* outcome 1
+* outcome 2
