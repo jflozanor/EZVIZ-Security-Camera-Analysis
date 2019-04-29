@@ -166,6 +166,9 @@ Once we have concluded our device analysis, we will be creating a report with al
 | Wireshark software | no | Mohammed & Khalid | Software used to monitor network traffic |
 | Workstations and writing materials | no | Everyone | For recording test results during practical |
 | WiFi Pumpkin | no | Everyone | For performing network attacks |
+| Postman | no | Jose Hernandez | Used for sending get requests to the camera on port 8000 |
+| Visual Studio Code | no | Jose Hernandez | Used write python program to establish a TCP Connection with the Camera|
+
 
 ## Results / Findings
 (brief overview of outcomes - what did you achieve?, list milestone 1/2/3 outcomes, make an effort to logically collect and organize the findings)
