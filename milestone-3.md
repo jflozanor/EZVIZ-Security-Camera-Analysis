@@ -9,6 +9,8 @@ A question was asked during the last milestone on whether you can change the def
 
 **Connecting to Camera via Port 8000**
 
+**Utilizing metasploit for common vulnerabilities.**
+One of the most common tools we used are metasploit.This tool tests all the known vulnerabilities in a system and attempts to crack the system. In our case, the tools detected possible vulnerable points of entry; however, when it ran the scripts and attack the camera, it failed in all counts. _cescobar_
 
 
 **Using TCP Connection to connect to Camera via Port 8000**
