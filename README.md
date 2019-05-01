@@ -176,3 +176,10 @@ Once we have concluded our device analysis, we will be creating a report with al
 (bulleted lists can also be helpful to structure your results discussion)
 * outcome 1
 * outcome 2
+
+* Hikvision Software
+* Open port 554
+* Weak Credentials
+* Unable to change credentials using the application
+* Connection over port 8000
+
