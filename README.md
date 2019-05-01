@@ -174,8 +174,6 @@ Once we have concluded our device analysis, we will be creating a report with al
 (brief overview of outcomes - what did you achieve?, list milestone 1/2/3 outcomes, make an effort to logically collect and organize the findings)
 
 (bulleted lists can also be helpful to structure your results discussion)
-* outcome 1
-* outcome 2
 
 * Hikvision Software
 * Open port 554
