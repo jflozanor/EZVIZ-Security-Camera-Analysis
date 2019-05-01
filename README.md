@@ -1,4 +1,5 @@
-# Executive Project Summary
+# EZVIZ Security Camera Analysis  
+## Executive Project Summary
 In the modern age, Internet of Things (IoT) devices are becoming more and more common. One portion of this growing market includes security cameras. Through research and development, Wi-Fi enabled cameras have become quite affordable. They also have a growing list of features that are attractive to consumers. Some examples of the convenient tools available include remote two-way communications, remote access to live video, integration with Alexa and IFTTT, cloud storage, SD storage, and much more.  
   
 Our main goal is to perform a penetration test on an EZVIZ CTQ2C 720p security camera. Our scope will include testing the vulnerabilities of the camera itself, along with utilizing other devices to attack it over the network. These can be the smartphone companion app, web app, and other IoT devices. We will not be directly pen testing the official servers that host the cloud service and allow remote camera access.  
@@ -167,22 +168,17 @@ Once we have concluded our device analysis, we will be creating a report with al
 | Workstations and writing materials | no | Everyone | For recording test results during practical |
 | WiFi Pumpkin | no | Everyone | For performing network attacks |
 | Postman | no | Jose Hernandez | Used for sending get requests to the camera on port 8000 |
-| Visual Studio Code | no | Jose Hernandez | Used write python program to establish a TCP Connection with the Camera|
+| Visual Studio Code | no | Jose Hernandez | Used to write python program to establish a TCP Connection with the Camera|
 
 
 ## Results / Findings
-(brief overview of outcomes - what did you achieve?, list milestone 1/2/3 outcomes, make an effort to logically collect and organize the findings)
-
-(bulleted lists can also be helpful to structure your results discussion)
-
-* Hikvision Software
-  Hikvision has software for its branded cameras that are used for commercial/enterprise survelliance. This software is meant for system administrators to configure and edit settings in the camera that are hidden from the average consumer. Using credentails one can acess any camera in the network and take ownership of the camera. Software not intended for the consumer
-* Open port 554 | utilizing a third party video streaming software (VLC) I was able to stream the video feed from the camera. Since the credentials are weak, a brute force attack allows me to access the video feed with ease. One misuse could be obtain video feed from an enterprise network, watching and recording the video feed using a thrid party software without trace. 
-* Weak Credentials | Brute forcing the credentials would not be hard, username is admin and password it 6 capital letters in random order|
-* Unable to change credentials using the application  
-  
-When connecting to the camera using port 554 the default username is admin and the password is a 6 characters in length. The characters are also all capital letters. The application used to control the camera has the option to change the encryption password, which we believed to be the same as the one used in port 554. The password change in the application had no effect on the password used to connect over port 554, the default password remained the same. This leaves the camera vulnerable to a brute  force attack even if attempted to be remediated.  
-
-* Connection over port 8000  
-  
-We discovered that port 8000 is used to connect to the parent companys, Hikvision,  management software. While viewing the connection between the camera and IVMS, the management software, we are able to see some http requests. When attempting to send the same GET requests using postman we get no response. The connection appeared to be some sort of TCP connection when attempting to connect to it, we were unable to get a response. If we had more knowledge on how the connection worked this may be a port that could be leveraged to attain additional information.
+* Hikvision Software:  
+Hikvision (the parent company of EZVIZ) has software for its branded cameras that are used for commercial/enterprise survelliance. This software is called IVMS. It is meant for system administrators to configure and edit settings in the camera that are hidden from the average consumer. Using credentails, one can acess any camera in the network and take ownership of the camera. Software is not intended for the consumer
+* Open port 554:  
+Utilizing a third party video streaming software (VLC) we were able to stream the video feed from the camera. Since the credentials are weak, a brute force attack allows us to access the video feed with ease. One misuse could be obtaining video feed from an enterprise network; and then watching and recording the video feed using a thrid party software without trace. 
+* Weak Credentials:  
+Brute forcing the credentials used for accessing the camera via port 554 would not be hard. The username is "admin" and the password is 6 capital letters in a random order. The same passoword is used for the default encryption password and is on the bottom of the camera's base (easy physical access).
+* Unable to change credentials using the application:  
+The application used to control the camera has the option to change the encryption password, which we believed to be the same as the one used in port 554. The password change in the application had no effect on the password used to connect over port 554; the default password remained the same. This leaves the camera vulnerable to a brute force attack even if remediation is attempted.  
+* Connection over port 8000:    
+We discovered that port 8000 is used to connect to the Hikvision management software. While viewing the connection between the camera and IVMS, we are able to see some http requests. When attempting to send the same GET requests using postman, we do not get a response. The connection appeared to be some sort of TCP connection when attempting to connect to it; we were unable to get a response. If we had more knowledge on how the connection worked, this may be a port that could be leveraged to attain additional information.
