@@ -9,8 +9,12 @@ A question was asked during the last milestone on whether you can change the def
 
 **Connecting to Camera via Port 8000**
 
-**Utilizing metasploit for common vulnerabilities.**
+**Utilizing metasploit for common vulnerabilities**
 One of the most common tools we used are metasploit.This tool tests all the known vulnerabilities in a system and attempts to crack the system. In our case, the tools detected possible vulnerable points of entry; however, when it ran the scripts and attack the camera, it failed in all counts. _cescobar_
+
+**Sniffing the network using wireshark** Another pass with wireshark so see if there was anything that would stand out from previous reviews. Unfortunaly, this did not yield any significant results. The only data I was able to recognize were typical uPnP packets to communicate to the servers.
+
+**Wi-Fi vulnerability found in marvell:88w8xxxx line** CVE-2019-6496 reports a vulnerabilty with ThreadX-based firmwares using Marvell Avast chips. The device I tested has a variant of the 88w8801 wireless chip, and it is likely to be vulnerable to the attacks mentioned in the CVE. 
 
 
 **Using TCP Connection to connect to Camera via Port 8000**
