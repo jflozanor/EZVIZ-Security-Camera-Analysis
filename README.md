@@ -179,6 +179,9 @@ Once we have concluded our device analysis, we will be creating a report with al
 * Open port 554 | utilizing a third party video streaming software (VLC) I was able to stream the video feed from the camera |
 * Weak Credentials | Brute forcing the credentials would not be hard, username is admin and password it 6 capital letters in random order|
 * Unable to change credentials using the application  
-When connecting to the camera using port 554 the default username is admin and the password is a 6 characters in length. The characters are also all capital letters. The application used to control the camera has the option to change the encryption password, which we believed to be the same as the one used in port 554. The password change in the application had no effect on the password used to connect over port 554, the default password remained the same. This leaves the camera vulnerable to a brute  force attack even if attempted to be remediated.
-* Connection over port 8000
+  
+When connecting to the camera using port 554 the default username is admin and the password is a 6 characters in length. The characters are also all capital letters. The application used to control the camera has the option to change the encryption password, which we believed to be the same as the one used in port 554. The password change in the application had no effect on the password used to connect over port 554, the default password remained the same. This leaves the camera vulnerable to a brute  force attack even if attempted to be remediated.  
 
+* Connection over port 8000  
+  
+We discovered that port 8000 is used to connect to the parent companys, Hikvision,  management software. While viewing the connection between the camera and IVMS, the management software, we are able to see some http requests. When attempting to send the same GET requests using postman we get no response. The connection appeared to be some sort of TCP connection when attempting to connect to it, we were unable to get a response. If we had more knowledge on how the connection worked this may be a port that could be leveraged to attain additional information.
