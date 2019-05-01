@@ -175,9 +175,9 @@ Once we have concluded our device analysis, we will be creating a report with al
 
 (bulleted lists can also be helpful to structure your results discussion)
 
-* Hikvision Software | Software not intended for the consumer camera, can be used to administer the camera using commercial level tools and settings. 
-* Open port 554 | utilizing a third party video streaming software (VLC) I was able to stream the video feed from the camera | 
-* Weak Credentials | Brute forcing the credentials would not be hard, username is admin and password it is all caps, 6chars in length and only has 3 digits. |
+| Hikvision Software | Software not intended for the consumer camera, can be used to administer the camera using commercial level tools and settings. 
+| Open port 554 | utilizing a third party video streaming software (VLC) I was able to stream the video feed from the camera | 
+| Weak Credentials | Brute forcing the credentials would not be hard, username is admin and password it is all caps, 6chars in length and only has 3 digits. |
 * Unable to change credentials using the application
 * Connection over port 8000
 
