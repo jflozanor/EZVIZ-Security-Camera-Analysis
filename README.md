@@ -172,13 +172,13 @@ Once we have concluded our device analysis, we will be creating a report with al
 
 
 ## Results / Findings
-* Hikvision Software:  
+* **Hikvision Software:**  
 Hikvision (the parent company of EZVIZ) has software for its branded cameras that are used for commercial/enterprise survelliance. This software is called IVMS. It is meant for system administrators to configure and edit settings in the camera that are hidden from the average consumer. Using credentails, one can acess any camera in the network and take ownership of the camera. Software is not intended for the consumer
-* Open port 554:  
+* **Open port 554:**  
 Utilizing a third party video streaming software (VLC) we were able to stream the video feed from the camera. Since the credentials are weak, a brute force attack allows us to access the video feed with ease. One misuse could be obtaining video feed from an enterprise network; and then watching and recording the video feed using a thrid party software without trace. 
-* Weak Credentials:  
+* **Weak Credentials:**  
 Brute forcing the credentials used for accessing the camera via port 554 would not be hard. The username is "admin" and the password is 6 capital letters in a random order. The same passoword is used for the default encryption password and is on the bottom of the camera's base (easy physical access).
-* Unable to change credentials using the application:  
+* **Unable to change credentials using the application:**  
 The application used to control the camera has the option to change the encryption password, which we believed to be the same as the one used in port 554. The password change in the application had no effect on the password used to connect over port 554; the default password remained the same. This leaves the camera vulnerable to a brute force attack even if remediation is attempted.  
-* Connection over port 8000:    
+* **Connection over port 8000:**  
 We discovered that port 8000 is used to connect to the Hikvision management software. While viewing the connection between the camera and IVMS, we are able to see some http requests. When attempting to send the same GET requests using postman, we do not get a response. The connection appeared to be some sort of TCP connection when attempting to connect to it; we were unable to get a response. If we had more knowledge on how the connection worked, this may be a port that could be leveraged to attain additional information.
