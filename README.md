@@ -175,8 +175,9 @@ Once we have concluded our device analysis, we will be creating a report with al
 
 (bulleted lists can also be helpful to structure your results discussion)
 
-* Hikvision Software | Software not intended for the consumer camera, can be used to administer the camera using commercial level tools and settings.|
-* Open port 554 | utilizing a third party video streaming software (VLC) I was able to stream the video feed from the camera |
+* Hikvision Software
+  Hikvision has software for its branded cameras that are used for commercial/enterprise survelliance. This software is meant for system administrators to configure and edit settings in the camera that are hidden from the average consumer. Using credentails one can acess any camera in the network and take ownership of the camera. Software not intended for the consumer
+* Open port 554 | utilizing a third party video streaming software (VLC) I was able to stream the video feed from the camera. Since the credentials are weak, a brute force attack allows me to access the video feed with ease. One misuse could be obtain video feed from an enterprise network, watching and recording the video feed using a thrid party software without trace. 
 * Weak Credentials | Brute forcing the credentials would not be hard, username is admin and password it 6 capital letters in random order|
 * Unable to change credentials using the application  
 When connecting to the camera using port 554 the default username is admin and the password is a 6 characters in length. The characters are also all capital letters. The application used to control the camera has the option to change the encryption password, which we believed to be the same as the one used in port 554. The password change in the application had no effect on the password used to connect over port 554, the default password remained the same. This leaves the camera vulnerable to a brute  force attack even if attempted to be remediated.
