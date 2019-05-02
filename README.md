@@ -147,7 +147,7 @@ Will need to start by probing the camera and validate that our scoped exploitati
 
 The next face of the attack will be performing the exploits. As previously stated in our goal section, the target will be submitted to Remote Access Exploits, Network spoofing attacks, DNS poisoning, Man In The Middle attacks, and other attacks applicable to this scenario. To perform these attacks, we will utilize the WiFi Pumpkin on a Linux VM on a LAN. Then we could use a tool like Wireshark to capture traffic from the camera. We require confidence that the exploits can be replicated on multiple cameras. Once that is accomplished, we can investigate other misuses for the camera and the data we exploited. 
   
-If we successfully obtaining Root on the device, we will push the limits of what we can do with the new privileges. This could be key creating the botnet. If we manage to reach our goal of accessing the camera controls and obtain video feeds without authorization, we could proceed to connect the cameras and create a botnet of EZVIZ IOT cameras in our controlled environment. 
+If we successfully obtain Root on the device, we will push the limits of what we can do with the new privileges. This could be key creating the botnet. If we manage to reach our goal of accessing the camera controls and obtain video feeds without authorization, we could proceed to connect the cameras and create a botnet of EZVIZ IOT cameras in our controlled environment. 
 
 ### Reporting
 
