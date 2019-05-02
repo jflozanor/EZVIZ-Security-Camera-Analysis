@@ -1,5 +1,3 @@
-**Started before I logged into app (fingerprint). Ran through camera setup process, changed the device name, encryption password, logged out, logged back in with password**
-
 --------- beginning of crash
 --------- beginning of main
 --------- beginning of system
