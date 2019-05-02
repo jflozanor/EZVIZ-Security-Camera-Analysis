@@ -33,6 +33,9 @@ As we found in nmap scan that the port 554 is opened so we tried to investigate 
 we opened iVMS and allowed Wireshark to start capturing the packets from iVMS. Once we stopped the scan, we found that there are only GET requests of HTTP protocol which sent from iVMS to the camera via port 8000 (we uploaded a screenshot). Also, it shows some login session information as username=admin&random=10015011
 As we already know that port 8000 is open by nmap scan, we also tried to do netcat session to double check that the port 8000 is open (screenshot is provided). _kalsalehi_ & _msalharthi_
 
+**Open ports, but no vulnerabilities found:**
+as nmap scan shows that there are some open ports, at this section we are focusing on ports 8000, 8200 and 9010. We tried to search for ways to exploit these three ports to get access to the camera. _kalsalehi_ & _msalharthi_
+
 
 ## Outcomes
 **Vulnerability Scan using Armitage**
