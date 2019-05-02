@@ -16,7 +16,7 @@ One of the most common tools we used are metasploit.This tool tests all the know
 
 
 **Using TCP Connection to connect to Camera via Port 8000**
-Since we were unable to get much out of trying to send GET requests to the camera through port 8000 we thought the connection might be TCP. I used python in order to try to connect to the camera but was unable to get any response from the camera. _jghernndz_
+Since we were unable to get much out of trying to send GET requests to the camera through port 8000 we thought the connection might be TCP. I used python in order to try to connect to the camera. I sent packets to mimic the ones seen in wireshark but was still unable to get any response from the camera. _jghernndz_
 
 **Hikvision IP Camera Access Bypass**
 Many Hikvision IP cameras suffer from accessing bypass vulnerabilities which allowing unauthenticated person to access to users’ configuration accounts. After we have done some research, we could figure out superuser account named “admin” can be easily impersonated. Therefore, we used three different URLs to check if we could get any information through this vulnerability. Here is our list of the three URLs and what they are used for:
@@ -42,18 +42,14 @@ Armitage was able to recommend a few attacks after it completed its initial scan
 **Attempt at changing the Camera default password**
 After changing and removing the password I found that none of these change the default password used for port 554. The password change is only for the video encryption used for the application. If the video is shared with another user using the phone app then that user would use the password that was changed during testing. _jgherndz_
 
-**Connecting to Camera via Port 8000**
-
-
-
-**Using TCP Connection to connect to Camera via Port 8000**
-I was unable to get any type of information. _jgherndz_
-
+**Using TCP Connection to connect to Camera via Port 8000** 
+I was unable to get any type of information from the tcp connection. _jgherndz_
+  
 **Hikvision IP Camera Access Bypass**
 We were not able to exploit the vulnerability using the three URLs. All what we can tell from this point is that this vulnerability has been mitigated. _kalsalehi_ & _msalharthi_
 
 **Investigating the open port 554**
-In the nmap result, we found some information such as rtsp://192.168.1.21/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream As we see there is user=admin, password=tlJwpbo6. We could not use these information to log in because we are in an isolated environment. _kalsalehi_ & _msalharthi_
+In the nmap result, we found some information such as rtsp://192.168.1.21/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream As we see there is user=admin, password=tlJwpbo6. _kalsalehi_ & _msalharthi_
 
 ****Connecting to Camera via Port 8000**:**
 In Wireshark result, we clicked on Hypertext Transfer Protocol to get the full request URL, we thought that would be the parameters as we know that GET sends parameters in the URL, which we need to add to the camera ip address to login to the camera onboard server via browsers, but we got a message “can’t reach this page” (two screenshots are provided). Also, we tried to filtered my packages by this filter “http && ip.src == <the camera ip address>”, we could not find anything. That means there is not response coming from the camera. We did not get any POST requests on Wireshark, we are not sure if this is because the high level of protection that iVMS has! Or the camera does not response. At the end we found that there is no way to access the camera’s onboard server via browsers so we could not run ZAP tool as we were planning to do. Also, we figured out that random, which is in login session information,  represents the session id since it changes each time we login into iVMS. _kalsalehi_ & _msalharthi_
@@ -68,14 +64,14 @@ The hinderance would be that the attacks that Armitage found were not succcesful
 **Attempt at changing the Camera default password**
 There were no hinderances, I was still able to connect using VLC player using the default username and password. _jgherndz_
 
-**Connecting to Camera via Port 8000**
+**Using TCP Connection to connect to Camera via Port 8000**
 A lack of knowledge on how to write a TCP connection in python could have limited my results. _jgherndez_
 
 **Hikvision IP Camera Access Bypass**
 This vulnerability cannot be exploited successfully because Hikvision released a new update for the camera that has fixed the vulnerability.   _kalsalehi_ & _msalharthi_
 
 **Investigating the open port 554**
-we cannot try to use these information to login since the camera does not host its web app locally.  _kalsalehi_ & _msalharthi_
+After testing the login information found with the nmap scan we were unable to retrieve the feed using VLC to attempt to connect to it.  _kalsalehi_ & _msalharthi_ & _jgherndz_
 
 **Connecting to Camera via Port 8000:**
 Wireshark is not able to get any response from the camera, so we can investigate the traffic that could be captured. We think that happens because there is a high level protection layer on iVMS preventing the camera’s response to get captured or there is manufacture errors which is mostly the correct reason. _kalsalehi_ & _msalharthi_
