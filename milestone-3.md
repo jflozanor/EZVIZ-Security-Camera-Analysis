@@ -41,8 +41,10 @@ The goal is to find the necessary information using Kismet and a wireless adapte
 While brainstorming for more attack vectors, I thought about the possibility of data being transferrable through the micro-USB port. To test this, I connected the camera to my laptop with a USB cable and ran the USB plugin for Wireshark against the connection. To help ensure proper test procedures, I tried a combination of two different cameras and two different cables. _twlayne_  
   
 **Revisiting ADB via Android Studio:**  
-After realizing there could be more to discover in ADB's logging feature via the Android Studio application, I set the log to record while performing the following activities: login to EZVIZ app with fingerprint, setup camera on wifi/phone, changed camera name in the app, changed encryption password, logged out of EZVIZ app, and logged back in with my regular password. To analyze the information collected, I opened the [ADBLogOutput](ADB/ADBLogOutput.txt) in Notepad++ and used the Find tool to search for any data that may be sensitive or aid with another attack. _twlayne_
-
+After realizing there could be more to discover in ADB's logging feature via the Android Studio application, I set the log to record while performing the following activities: login to EZVIZ app with fingerprint, setup camera on wifi/phone, changed camera name in the app, changed encryption password, logged out of EZVIZ app, and logged back in with my regular password. To analyze the information collected, I opened the [ADBLogOutput](ADB/ADBLogOutput.txt) in Notepad++ and used the Find tool to search for any data that may be sensitive or aid with another attack. _twlayne_  
+  
+**Tcpdump:**  
+Another Android investigation tool available is Tcpdump. With a rooted phone and the command line interface for ADB, Tcpdump serves as a way to capture network packets directly from the device. After obtaining a copy of the binary for the tool, I followed the steps listed on the https://wladimir-tm4pda.github.io/porting/tcpdump.html web page. This resulted in me collecting a pcap file ([Tcpdump Capture](ADB/capture_tcpdump.pcap)) that I could view in Wireshark. _twlayne_
 
 ## Outcomes
 **Vulnerability Scan Using Armitage:**  
@@ -70,7 +72,22 @@ as a result of our search, we could find exposed vulnerability in port 8000 that
 There were a few setbacks, like the initial guide being incomplete, using a bad computer, and not fully understanding the GUI for Kismet. I was able to block the communication between the camera and the access point (router). This command persists until you stop it with CTRL-C. This attack is not limited to just WiFi connected cameras but most IoT devices. Ways to protect against this attack include reducing the range of your access point, using cables instead of going wireless, or making your network hidden.  The last one is not advised because it could make someone try harder to get into the network if the network is hidden. _smrooney_    
 
 **Using Wireshark on the USB Connection:**  
-Data is not transferrable via the micro-USB port. Wireshark failed to detect any data utilizing the connection while the camera was in use. Device was not detected by my computer. _twlayne_
+Data is not transferrable via the micro-USB port. Wireshark failed to detect any data utilizing the connection while the camera was in use. Device was not detected by my computer. _twlayne_  
+  
+**Revisiting ADB via Android Studio:**  
+While digging into the output from ADB, I made a few small discoveries:  
+* When logging into the application with a password, "password_value" is a visible piece of data. However, it is not clear text; the values appears hashed.  
+* Altering the camera name and encryption password did not result in log entries. With this, there were no clear text values with the input I provided during the changes.
+* No network data (such as IP, MAC, and SSID) could be found.
+* During initial app loading, userID 0 was used. This is known to be the superuser/root account for an Android device.
+* In some log entries, my phone's device model (SM-G965U) could be read, along with the EZVIZ process being denied access vector cache (AVC) permission. _twlayne_  
+  
+**Tcpdump:**  
+While the captured packets failed to reveal any super helpful data, there were a few things I found that were interesting:  
+* Throughout many of the packets, it became evident that EZVIZ relies on Amazon AWS for at least some of their server activities.
+* Packets such as 941 serve as GET requests for image files where the source IP is that of the phone. In the pcap file, I saw requests for 3.png, 4.png, and 5.png. I opened the gallery on the phone and found 1.png and 2.png. The images were nothing more than thumbnail-like pictures of the camera.
+* While we are already well aware that the EZVIZ cameras are developed in a way that allows for compatibility with Hikvision tools, some of the packets from Tcpdump contain more proof of this fact. Like in packet 1398, Hikvision is directly referenced in a query being performed by the camera.
+* Throughout the pcap data, it is evident that encryption is being used to hide any sensitive data. Encryption Alerts and Encrypted Handshakes are spread throughout the file. _twlayne_
 
 ## Hinderances
 **Vulnerability Scan Using Armitage:**  
@@ -92,4 +109,7 @@ After testing the login information found with the nmap scan we were unable to r
 Wireshark is not able to get any response from the camera, so we can investigate the traffic that could be captured. We think that happens because there is a high level protection layer on iVMS preventing the camera’s response to get captured or there is manufacture errors which is mostly the correct reason. _kalsalehi_ & _msalharthi_
 
 **Open Ports, but No Vulnerabilities Found:**  
-we could not do anything with our finding for port 8000 since the finindin is not going to work on Hikvision. We skipped the port 8200 since we have not found anything to play around. Lastly, the vulnerability that we found for port 9010, it allows anyone to get control remotely across the public internet so it is not useful in our case since we are in isolated environment. _kalsalehi_ & _msalharthi_ 
+we could not do anything with our finding for port 8000 since the finindin is not going to work on Hikvision. We skipped the port 8200 since we have not found anything to play around. Lastly, the vulnerability that we found for port 9010, it allows anyone to get control remotely across the public internet so it is not useful in our case since we are in isolated environment. _kalsalehi_ & _msalharthi_  
+  
+**Revisiting ADB via Android Studio:**
+A small hinderance encountered while using ADB was the Androind studio app would not filter my logs based on the process. I had to resort to a text string filter on "ezviz". 
