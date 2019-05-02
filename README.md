@@ -151,7 +151,7 @@ If we successfully obtain Root on the device, we will push the limits of what we
 
 ### Reporting
 
-Once we have concluded our device analysis, we will be creating a report with all our findings. The report will include the vulnerabilities discovered, if any, and their associated risk score. The report will also include possible remediations for the vulnerabilities discovered. Finally, we will also create a best practices guide based on our research in order to help secure these devices. 
+Once we have concluded our device analysis, we will be creating a report with all our findings. The report will include the vulnerabilities discovered, or the lack-there-of if none are found. It will also include possible remediations for the vulnerabilities discovered. Finally, it will mention where the project could be taken next in the future.
 
 # Resources/Technology needed
 |Resource  | Dr. Hale needed? | Investigating Team member | Description |
