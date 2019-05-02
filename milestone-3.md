@@ -68,7 +68,7 @@ In Wireshark result, we clicked on Hypertext Transfer Protocol to get the full r
 As a result of our search, we could find exposed vulnerability in port 8000 that may work for Splunk software company not for Hikvision. Also, we could not find anything that may help us to exploit port 8200. Lastly, we moved to port 9010, we found a vulnerability called UPnP NAT Traversal that may work to exploit the port 9010. _kalsalehi_ & _msalharthi_ 
 
 **Deauthenticating the Camera from the Access Point Using Aireplay-ng:**  
-There were a few setbacks, like the initial guide being incomplete, using a bad computer, and not fully understanding the GUI for Kismet. I was able to block the communication between the camera and the access point (router). This command persists until you stop it with CTRL-C. This attack is not limited to just WiFi connected cameras but most IoT devices. Ways to protect against this attack include reducing the range of your access point, using cables instead of going wireless, or making your network hidden.  The last one is not advised because it could make someone try harder to get into the network if the network is hidden. _smrooney_    
+I was able to block the communication between the camera and the access point (router). This command persists until you stop it with CTRL-C. This attack is not limited to just WiFi connected cameras but most IoT devices. Ways to protect against this attack include reducing the range of your access point, using cables instead of going wireless, or making your network hidden.  The last one is not advised because it could make someone try harder to get into the network if the network is hidden. _smrooney_    
 
 **Using Wireshark on the USB Connection:**  
 Data is not transferrable via the micro-USB port. Wireshark failed to detect any data utilizing the connection while the camera was in use. Device was not detected by my computer. _twlayne_  
@@ -112,3 +112,6 @@ we could not do anything with our finding for port 8000 since the finding is not
   
 **Revisiting ADB via Android Studio:**
 A small hinderance encountered while using ADB was the Android studio app would not filter my logs based on the process name/ID. I had to resort to a text string filter on "ezviz". _twlayne_
+
+**Deauthenticating the Camera from the Access Point Using Aireplay-ng:**  
+There were a few setbacks, like the initial guide being incomplete, using a bad computer, and not fully understanding the GUI for Kismet. _smrooney_
