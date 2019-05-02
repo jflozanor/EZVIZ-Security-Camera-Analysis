@@ -112,4 +112,4 @@ Wireshark is not able to get any response from the camera, so we can investigate
 we could not do anything with our finding for port 8000 since the finindin is not going to work on Hikvision. We skipped the port 8200 since we have not found anything to play around. Lastly, the vulnerability that we found for port 9010, it allows anyone to get control remotely across the public internet so it is not useful in our case since we are in isolated environment. _kalsalehi_ & _msalharthi_  
   
 **Revisiting ADB via Android Studio:**
-A small hinderance encountered while using ADB was the Androind studio app would not filter my logs based on the process. I had to resort to a text string filter on "ezviz". 
+A small hinderance encountered while using ADB was the Androind studio app would not filter my logs based on the process. I had to resort to a text string filter on "ezviz". _twlayne_
