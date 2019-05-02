@@ -81,3 +81,6 @@ we cannot try to use these information to login since the camera does not host i
 
 **Using wireshark to capture iVMS packages:**
 Wireshark is not able to get any response from the camera, so we can investigate the traffic that could be captured. We think that happens because there is a high level protection layer on iVMS preventing the camera’s response to get captured or there is manufacture errors which is mostly the correct reason. _kalsalehi_ & _msalharthi_
+
+**Open ports, but no vulnerabilities found:** 
+we could not do anything with our finding for port 8000 since the finindin is not going to work on Hikvision. We skipped the port 8200 since we have not found anything to play around. Lastly, the vulnerability that we found for port 9010, it allows anyone to get control remotely across the public internet so it is not useful in our case since we are in isolated environment. _kalsalehi_ & _msalharthi_ 
