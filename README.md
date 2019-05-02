@@ -167,6 +167,7 @@ Once we have concluded our device analysis, we will be creating a report with al
 | WiFi Pumpkin | no | Everyone | For performing network attacks |
 | Postman | no | Jose Hernandez | Used for sending get requests to the camera on port 8000 |
 | Visual Studio Code | no | Jose Hernandez | Used to write python program to establish a TCP Connection with the Camera|
+| iVMS | no | Jose, Christian, Khalid, & Mohammed | Hikvision software that offers management features over EZVIZ Camera |
 
 
 ## Results / Findings  
