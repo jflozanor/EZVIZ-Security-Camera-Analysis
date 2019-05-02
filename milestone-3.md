@@ -61,3 +61,6 @@ A lack of knowledge on how to write a TCP connection in python could have limite
 
 **Hikvision IP Camera Access Bypass**
 This vulnerability cannot be exploited successfully because Hikvision released a new update for the camera that has fixed the vulnerability.   _kalsalehi_ & _msalharthi_
+
+**Investigating the open port 554**
+we cannot try to use these information to login since the camera does not host its web app locally.  _kalsalehi_ & _msalharthi_
