@@ -171,17 +171,31 @@ Once we have concluded our device analysis, we will be creating a report with al
 | Visual Studio Code | no | Jose Hernandez | Used to write python program to establish a TCP Connection with the Camera|
 
 
-## Results / Findings
+## Results / Findings  
+Below are the final quanitative results of our work on this security camera pentest project. The efforts that ended up making the findings list are just the tip of the iceberg of our work performed. We started out with ambitious goals and with that came probability that some testing would yield nonmaterial results or not even be testable like we initially believed. While there were many roadblocks along the way, we managed to adapt as we progressed by finding new ways to overcome challenges or discovering even more attack vectors to shift our focus onto.  
+  
 * **Hikvision Software:**  
-Hikvision (the parent company of EZVIZ) has software for its branded cameras that are used for commercial/enterprise survelliance. This software is called IVMS. It is meant for system administrators to configure and edit settings in the camera that are hidden from the average consumer. Using credentails, one can acess any camera in the network and take ownership of the camera. Software is not intended for the consumer
+Hikvision (the parent company of EZVIZ) has software for its branded cameras that are used for commercial/enterprise survelliance. This software is called IVMS. It is meant for system administrators to configure and edit settings in the camera that are hidden from the average consumer. Using credentials, one can acess any camera in the network and take ownership of the camera. The software is not intended for the consumer
+
 * **Open Port 554:**  
 Utilizing a third party video streaming software (VLC) we were able to stream the video feed from the camera. Since the credentials are weak, a brute force attack allows us to access the video feed with ease. One misuse could be obtaining video feed from an enterprise network; and then watching and recording the video feed using a thrid party software without trace. 
+
 * **Weak Credentials:**  
 Brute forcing the credentials used for accessing the camera via port 554 would not be hard. The username is "admin" and the password is 6 capital letters in a random order. The same passoword is used for the default encryption password and is on the bottom of the camera's base (easy physical access).
+
 * **Unable to Change Credentials Using the Application:**  
 The application used to control the camera has the option to change the encryption password, which we believed to be the same as the one used in port 554. The password change in the application had no effect on the password used to connect over port 554; the default password remained the same. This leaves the camera vulnerable to a brute force attack even if remediation is attempted.  
+
 * **Connection Over Port 8000:**  
 We discovered that port 8000 is used to connect to the Hikvision management software. While viewing the connection between the camera and IVMS, we are able to see some http requests. When attempting to send the same GET requests using postman, we do not get a response. The connection appeared to be some sort of TCP connection when attempting to connect to it; we were unable to get a response. If we had more knowledge on how the connection worked, this may be a port that could be leveraged to attain additional information.
 
-* **Aireplay-ng deauthentication attack:**
-After setting up Kismet and the wireless adapter on the Kali box, I found that the camera could be disrupted using the Aireplay-ng attack.  The camera stays unresponsive for as long as the command is running.
+* **Aireplay-ng Deauthentication Attack:**
+After setting up Kismet and the wireless adapter on a Linux Kali box, we found that the camera could be disrupted using the Aireplay-ng attack. The camera stays unresponsive for as long as the command is running.  
+  
+* **Implemented Android Application Security:**  
+While pentesting the Android EZVIZ app, we learned that the app is fairly well secured. The analysis performed revealed proper encryption of network traffic and the hashing of passwords when they were present in logs. Also, EZVIZ coded it in such a way that it cannot be installed or run without crashing on emulated Android devices. They covered their bases in secure app design to prevent malicious tinkering.  
+
+### Moving Forward  
+While something like a deauthentication attack does not have a realistic defense, issues such as open ports or weak default credentials can feasibly be remediated. Being able to tap into someone else's camera feed through an open port is a big privacy issue for consumers looking to monitor their homes without their own devices being used against them. While using Hikvision software on an EZVIZ camera is not part of the intended use case, the weak admin credentials can have a relatively simple fix. First of all, the default password should not be stored on the base of the camera. Also, linking it to the encryption password (since they are both the same by default) so that it gets changed when the encryption password is changed within the app would help reduce the risk posed by weak credentials.  
+  
+Future work testing the EZVIZ security camera would be best spent on the IVMS software. We did not discover it until late in our pentesting and may still hold some tricks we did not think to exploit yet. It is very powerful in the realm of consumer grade EZVIZ security cameras (considering the software was built to help people manage commercial grade Hikvision devices). Beyond that, we tested a plethora of attack vectors and further research would be well spent on different security cameras. This would lead to a better idea of what vulnerabilities may exist across multiple camera models or even different brands.
