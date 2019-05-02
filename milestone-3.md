@@ -26,6 +26,9 @@ Many Hikvision IP cameras suffer from accessing bypass vulnerabilities which all
 *  http://<camera.ip>/onvif-http/snapshot?auth=YWRtaW46MTEK - get snapchat from the camera without authentication.
 *  http://<camera.ip>/System/configurationFile?auth=YWRtaW46MTEK - download the camera configuration. _kalsalehi_ & _msalharthi_
 
+**Investigating the open port 554**
+As we found in nmap scan that the port 554 is opened so we tried to investigate this port to see if we can get any useful information. We ran the following command in terminal: Nmap --script rtsp-url-brute -p 554 192.168.1.21 (we attached the result of this command that we got.) _kalsalehi_ & _msalharthi_
+
 ## Outcomes
 **Vulnerability Scan using Armitage**
 Armitage was able to recommend a few attacks after it completed its initial scan and found the camera. There were 3 categories that armitage found unfortunately none of the exploits worked. _jgherndz_
@@ -43,6 +46,8 @@ I was unable to get any type of information. _jgherndz_
 **Hikvision IP Camera Access Bypass**
 We were not able to exploit the vulnerability using the three URLs. All what we can tell from this point is that this vulnerability has been mitigated. _kalsalehi_ & _msalharthi_
 
+**Investigating the open port 554**
+In the nmap result, we found some information such as rtsp://192.168.1.21/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream As we see there is user=admin, password=tlJwpbo6. We could not use these information to log in because we are in an isolated environment. _kalsalehi_ & _msalharthi_
 
 ## Hinderances
 **Vulnerability Scan using Armitage**
