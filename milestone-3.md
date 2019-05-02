@@ -22,7 +22,7 @@ Since we were unable to get much out of trying to send GET requests to the camer
 
 **Hikvision IP Camera Access Bypass**
 Many Hikvision IP cameras suffer from accessing bypass vulnerabilities which allowing unauthenticated person to access to users’ configuration accounts. After we have done some research, we could figure out superuser account named “admin” can be easily impersonated. Therefore, we used three different URLs to check if we could get any information through this vulnerability. Here is our list of the three URLs and what they are used for:
-*  http://<ip address>/Security/users?auth=YWRtaW46MTEK - retrieve a list of all users and their roles.
+*  http://<camera.ip>/Security/users?auth=YWRtaW46MTEK - retrieve a list of all users and their roles.
 *  http://<camera.ip>/onvif-http/snapshot?auth=YWRtaW46MTEK - get snapchat from the camera without authentication.
 *  http://<camera.ip>/System/configurationFile?auth=YWRtaW46MTEK - download the camera configuration. _kalsalehi_ & _msalharthi_
 
@@ -40,6 +40,10 @@ After changing and removing the password I found that none of these change the d
 **Using TCP Connection to connect to Camera via Port 8000**
 I was unable to get any type of information. _jgherndz_
 
+**Hikvision IP Camera Access Bypass**
+We were not able to exploit the vulnerability using the three URLs. All what we can tell from this point is that this vulnerability has been mitigated. _kalsalehi_ & _msalharthi_
+
+
 ## Hinderances
 **Vulnerability Scan using Armitage**
 The hinderance would be that the attacks that Armitage found were not succcesful. _jgherndz_
@@ -49,3 +53,6 @@ There were no hinderances, I was still able to connect using VLC player using th
 
 **Connecting to Camera via Port 8000**
 A lack of knowledge on how to write a TCP connection in python could have limited my results. _jgherndez_
+
+**Hikvision IP Camera Access Bypass**
+This vulnerability cannot be exploited successfully because Hikvision released a new update for the camera that has fixed the vulnerability.   _kalsalehi_ & _msalharthi_
