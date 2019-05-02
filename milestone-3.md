@@ -29,6 +29,11 @@ Many Hikvision IP cameras suffer from accessing bypass vulnerabilities which all
 **Investigating the open port 554**
 As we found in nmap scan that the port 554 is opened so we tried to investigate this port to see if we can get any useful information. We ran the following command in terminal: Nmap --script rtsp-url-brute -p 554 192.168.1.21 (we attached the result of this command that we got.) _kalsalehi_ & _msalharthi_
 
+**Using wireshark to capture iVMS packages:**
+we opened iVMS and allowed Wireshark to start capturing the packets from iVMS. Once we stopped the scan, we found that there are only GET requests of HTTP protocol which sent from iVMS to the camera via port 8000 (we uploaded a screenshot). Also, it shows some login session information as username=admin&random=10015011
+As we already know that port 8000 is open by nmap scan, we also tried to do netcat session to double check that the port 8000 is open (screenshot is provided). _kalsalehi_ & _msalharthi_
+
+
 ## Outcomes
 **Vulnerability Scan using Armitage**
 Armitage was able to recommend a few attacks after it completed its initial scan and found the camera. There were 3 categories that armitage found unfortunately none of the exploits worked. _jgherndz_
