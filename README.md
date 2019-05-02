@@ -137,8 +137,6 @@ One threat space that we will attempt to use to gain access to the EZVIZ securit
 
 In this study the group will attempt to access EZVIZ CTQ2C 720p security camera. To gain access to the camera, we will attempt getting its IP address though a web application called the angry IP scanner. Follow the steps as arraigned in #5 from the Literature Review. If any vulnerability is found, the test results will be recorded as further investigations are conducted.  
   
-To test what kind of power over the camera we can gain via the microSD slot, we intend on following a process similar to that of Mr. Chase in resource #13. He performed the attack on a Hikvision camera. Hikvision is the parent company of EZVIZ and is prone to having security issues (based on our initial Google searches).
-
 Since all of us have a camera at our disposal, we plan on accepting the potential loss of one. To appease our curiosity, we will take one apart and see what can be learned about how its hardware functions. May prove to be helpful in compromising the device's security.
 
 ### Vulnerabilities and Exploitation 
@@ -149,7 +147,7 @@ Will need to start by probing the camera and validate that our scoped exploitati
 
 The next face of the attack will be performing the exploits. As previously stated in our goal section, the target will be submitted to Remote Access Exploits, Network spoofing attacks, DNS poisoning, Man In The Middle attacks, and other attacks applicable to this scenario. To perform these attacks, we will utilize the WiFi Pumpkin on a Linux VM on a LAN. Then we could use a tool like Wireshark to capture traffic from the camera. We require confidence that the exploits can be replicated on multiple cameras. Once that is accomplished, we can investigate other misuses for the camera and the data we exploited. 
   
-After successfully obtaining Root on the device using the microSD card slot firmware attack, we will push the limits of what we can do with the new privileges. This could be key creating the botnet. If we manage to reach our goal of accessing the camera controls and obtain video feeds without authorization, we could proceed to connect the cameras and create a botnet of EZVIZ IOT cameras in our controlled environment. 
+If we successfully obtaining Root on the device, we will push the limits of what we can do with the new privileges. This could be key creating the botnet. If we manage to reach our goal of accessing the camera controls and obtain video feeds without authorization, we could proceed to connect the cameras and create a botnet of EZVIZ IOT cameras in our controlled environment. 
 
 ### Reporting
 
@@ -172,16 +170,16 @@ Once we have concluded our device analysis, we will be creating a report with al
 
 
 ## Results / Findings  
-Below are the final quanitative results of our work on this security camera pentest project. The efforts that ended up making the findings list are just the tip of the iceberg of our work performed. We started out with ambitious goals and with that came probability that some testing would yield nonmaterial results or not even be testable like we initially believed. While there were many roadblocks along the way, we managed to adapt as we progressed by finding new ways to overcome challenges or discovering even more attack vectors to shift our focus onto.  
+Below are the final quantitative results of our work on this security camera pentest project. The efforts that ended up making the findings list are just the tip of the iceberg of our work performed. We started out with ambitious goals and with that came probability that some testing would yield nonmaterial results or not even be testable like we initially believed. While there were many roadblocks along the way, we managed to adapt as we progressed by finding new ways to overcome challenges or discovering even more attack vectors to shift our focus onto.  
   
 * **Hikvision Software:**  
-Hikvision (the parent company of EZVIZ) has software for its branded cameras that are used for commercial/enterprise survelliance. This software is called IVMS. It is meant for system administrators to configure and edit settings in the camera that are hidden from the average consumer. Using credentials, one can acess any camera in the network and take ownership of the camera. The software is not intended for the consumer
+Hikvision (the parent company of EZVIZ) has software for its branded cameras that are used for commercial/enterprise surveillance. This software is called IVMS. It is meant for system administrators to configure and edit settings in the camera that are hidden from the average consumer. Using credentials, one can access any camera in the network and take ownership of the camera. The software is not intended for the consumer
 
 * **Open Port 554:**  
-Utilizing a third party video streaming software (VLC) we were able to stream the video feed from the camera. Since the credentials are weak, a brute force attack allows us to access the video feed with ease. One misuse could be obtaining video feed from an enterprise network; and then watching and recording the video feed using a thrid party software without trace. 
+Utilizing a third party video streaming software (VLC) we were able to stream the video feed from the camera. Since the credentials are weak, a brute force attack allows us to access the video feed with ease. One misuse could be obtaining video feed from an enterprise network; and then watching and recording the video feed using a third party software without trace. 
 
 * **Weak Credentials:**  
-Brute forcing the credentials used for accessing the camera via port 554 would not be hard. The username is "admin" and the password is 6 capital letters in a random order. The same passoword is used for the default encryption password and is on the bottom of the camera's base (easy physical access).
+Brute forcing the credentials used for accessing the camera via port 554 would not be hard. The username is "admin" and the password is 6 capital letters in a random order. The same password is used for the default encryption password and is on the bottom of the camera's base (easy physical access).
 
 * **Unable to Change Credentials Using the Application:**  
 The application used to control the camera has the option to change the encryption password, which we believed to be the same as the one used in port 554. The password change in the application had no effect on the password used to connect over port 554; the default password remained the same. This leaves the camera vulnerable to a brute force attack even if remediation is attempted.  
