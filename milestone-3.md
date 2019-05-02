@@ -55,7 +55,7 @@ We were not able to exploit the vulnerability using the three URLs. All what we 
 **Investigating the open port 554**
 In the nmap result, we found some information such as rtsp://192.168.1.21/user=admin_password=tlJwpbo6_channel=1_stream=0.sdp?real_stream As we see there is user=admin, password=tlJwpbo6. We could not use these information to log in because we are in an isolated environment. _kalsalehi_ & _msalharthi_
 
-**Using wireshark to capture iVMS packages:**
+****Connecting to Camera via Port 8000**:**
 In Wireshark result, we clicked on Hypertext Transfer Protocol to get the full request URL, we thought that would be the parameters as we know that GET sends parameters in the URL, which we need to add to the camera ip address to login to the camera onboard server via browsers, but we got a message “can’t reach this page” (two screenshots are provided). Also, we tried to filtered my packages by this filter “http && ip.src == <the camera ip address>”, we could not find anything. That means there is not response coming from the camera. We did not get any POST requests on Wireshark, we are not sure if this is because the high level of protection that iVMS has! Or the camera does not response. At the end we found that there is no way to access the camera’s onboard server via browsers so we could not run ZAP tool as we were planning to do. Also, we figured out that random, which is in login session information,  represents the session id since it changes each time we login into iVMS. _kalsalehi_ & _msalharthi_
   
 **Open ports, but no vulnerabilities found:** 
