@@ -182,3 +182,6 @@ Brute forcing the credentials used for accessing the camera via port 554 would n
 The application used to control the camera has the option to change the encryption password, which we believed to be the same as the one used in port 554. The password change in the application had no effect on the password used to connect over port 554; the default password remained the same. This leaves the camera vulnerable to a brute force attack even if remediation is attempted.  
 * **Connection Over Port 8000:**  
 We discovered that port 8000 is used to connect to the Hikvision management software. While viewing the connection between the camera and IVMS, we are able to see some http requests. When attempting to send the same GET requests using postman, we do not get a response. The connection appeared to be some sort of TCP connection when attempting to connect to it; we were unable to get a response. If we had more knowledge on how the connection worked, this may be a port that could be leveraged to attain additional information.
+
+* **Aireplay-ng deauthentication attack:**
+After setting up Kismet and the wireless adapter on the Kali box, I found that the camera could be disrupted using the Aireplay-ng attack.  The camera stays unresponsive for as long as the command is running.
