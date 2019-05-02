@@ -7,8 +7,6 @@ I thought it would be a good idea to run armitage and see what kind of exploits 
 **Attempt at changing the Camera default password**
 A question was asked during the last milestone on whether you can change the default password used to connect to the camera over port 554. I did some testing with the phone application and changed the default password and even removed it to see if it would affect the connection over port 554. _jgherndz_
 
-**Connecting to Camera via Port 8000**
-
 **Utilizing metasploit for common vulnerabilities**
 One of the most common tools we used are metasploit.This tool tests all the known vulnerabilities in a system and attempts to crack the system. In our case, the tools detected possible vulnerable points of entry; however, when it ran the scripts and attack the camera, it failed in all counts. _cescobar_
 
@@ -29,7 +27,7 @@ Many Hikvision IP cameras suffer from accessing bypass vulnerabilities which all
 **Investigating the open port 554**
 As we found in nmap scan that the port 554 is opened so we tried to investigate this port to see if we can get any useful information. We ran the following command in terminal: Nmap --script rtsp-url-brute -p 554 192.168.1.21 (we attached the result of this command that we got.) _kalsalehi_ & _msalharthi_
 
-**Using wireshark to capture iVMS packages:**
+**Connecting to Camera via Port 8000:**
 we opened iVMS and allowed Wireshark to start capturing the packets from iVMS. Once we stopped the scan, we found that there are only GET requests of HTTP protocol which sent from iVMS to the camera via port 8000 (we uploaded a screenshot). Also, it shows some login session information as username=admin&random=10015011
 As we already know that port 8000 is open by nmap scan, we also tried to do netcat session to double check that the port 8000 is open (screenshot is provided). _kalsalehi_ & _msalharthi_
 
@@ -79,7 +77,7 @@ This vulnerability cannot be exploited successfully because Hikvision released a
 **Investigating the open port 554**
 we cannot try to use these information to login since the camera does not host its web app locally.  _kalsalehi_ & _msalharthi_
 
-**Using wireshark to capture iVMS packages:**
+**Connecting to Camera via Port 8000:**
 Wireshark is not able to get any response from the camera, so we can investigate the traffic that could be captured. We think that happens because there is a high level protection layer on iVMS preventing the camera’s response to get captured or there is manufacture errors which is mostly the correct reason. _kalsalehi_ & _msalharthi_
 
 **Open ports, but no vulnerabilities found:** 
