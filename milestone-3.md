@@ -34,6 +34,8 @@ As we already know that port 8000 is open by nmap scan, we also tried to do netc
 **Open ports, but no vulnerabilities found:**
 as nmap scan shows that there are some open ports, at this section we are focusing on ports 8000, 8200 and 9010. We tried to search for ways to exploit these three ports to get access to the camera. _kalsalehi_ & _msalharthi_
 
+**Deauthenticating the camera from the access point using Aireplay-ng:**
+The goal is to find the necessary information using Kismet and a wireless adapter. The information I need for this to work is the MAC address and the channel for the camera and access point. 
 
 ## Outcomes
 **Vulnerability Scan using Armitage**
@@ -78,3 +80,6 @@ Wireshark is not able to get any response from the camera, so we can investigate
 
 **Open ports, but no vulnerabilities found:** 
 we could not do anything with our finding for port 8000 since the finindin is not going to work on Hikvision. We skipped the port 8200 since we have not found anything to play around. Lastly, the vulnerability that we found for port 9010, it allows anyone to get control remotely across the public internet so it is not useful in our case since we are in isolated environment. _kalsalehi_ & _msalharthi_ 
+
+**Deauthenticating the camera from the access point using Aireplay-ng:**
+There were a few setbacks, like the initial guide being incomplete, using a bad computer, and not fully understanding the GUI for Kismet.  I was able to block the communication between the camera and the access point (router).  This command persists until you stop it with CTRL-C.  This attack is not limited to just WiFi connected cameras but most IoT devices.  Ways to protect against this attack include reducing the range of your access point, using cables instead of going wireless, or making your network hidden.  The last one is not advised because it could make someone try harder to get into the network if the network is hidden.
