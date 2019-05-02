@@ -72,3 +72,6 @@ This vulnerability cannot be exploited successfully because Hikvision released a
 
 **Investigating the open port 554**
 we cannot try to use these information to login since the camera does not host its web app locally.  _kalsalehi_ & _msalharthi_
+
+**Using wireshark to capture iVMS packages:**
+Wireshark is not able to get any response from the camera, so we can investigate the traffic that could be captured. We think that happens because there is a high level protection layer on iVMS preventing the camera’s response to get captured or there is manufacture errors which is mostly the correct reason. _kalsalehi_ & _msalharthi_
