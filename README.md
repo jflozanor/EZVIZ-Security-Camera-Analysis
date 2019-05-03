@@ -40,8 +40,9 @@ Illegal camera surveillance has adverse effects on society, from the perspective
 | Produce Final Presentation | 4/18 | 5/03 | 2 weeks |
 
 
-## Gantt Chart
+## [Gantt Chart](https://github.com/jgherndz/EZVIZ-Security-Camera-Analysis/blob/master/Gantt%20Chart.JPG)
 ![Alt Text](https://github.com/jgherndz/EZVIZ-Security-Camera-Analysis/blob/master/Gantt%20Chart.JPG)
+
 
 # Project-oriented Risk List
 |Risk name (value)  | Impact     | Likelihood | Description |
