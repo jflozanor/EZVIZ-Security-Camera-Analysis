@@ -54,9 +54,9 @@ Illegal camera surveillance has adverse effects on society, from the perspective
 |Cannot attack via IOS/Android Apps (15) | 3 | 5 | There may be no vulnerabilities allow us to get access to the camera via the phone apps |
   
 # Diagrams
-[Use Case: Camera](Diagrams/Use_Case_Camera.PNG)  
-[Use Case: API](Diagrams/Use_Case_Api.PNG)  
-[Process: Emulator](Diagrams/Process_Emulator.JPG)
+[Use Case: Camera](https://github.com/jgherndz/EZVIZ-Security-Camera-Analysis/tree/master/Diagrams/Use_Case_Camera.PNG)  
+[Use Case: API](https://github.com/jgherndz/EZVIZ-Security-Camera-Analysis/tree/master/Diagrams/Use_Case_Api.PNG)  
+[Process: Emulator](https://github.com/jgherndz/EZVIZ-Security-Camera-Analysis/tree/master/Diagrams/Process_Emulator.JPG)
   
 # Project Methodology
 ## Literature Review
