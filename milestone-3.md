@@ -102,7 +102,7 @@ A lack of knowledge on how to write a TCP connection in python could have limite
 This vulnerability cannot be exploited successfully because Hikvision released a new update for the camera that has fixed the vulnerability.   _kalsalehi_ & _msalharthi_
 
 **Investigating the Open Port 554:**  
-After testing this method of obtaining login credentials. the login information we found with the nmap scan we was unable to retrieve the feed using VLC to attempt to connect to it.  _kalsalehi_ & _msalharthi_ & _jgherndz_
+This method of obtaining login credentials is seperate from our previous attempt at tinkering with port 554. The login information we found using the nmap scan wasn't able to login succesfully using VLC. _kalsalehi_ & _msalharthi_ & _jgherndz_
 
 **Connecting to Camera via Port 8000:**  
 Wireshark is not able to get any response from the camera, so we can investigate the traffic that could be captured. We think that happens because there is a high-level protection layer on iVMS preventing the camera’s response to get captured or there is manufacture errors which is mostly the correct reason. _kalsalehi_ & _msalharthi_
